@@ -165,6 +165,9 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
+data/GSE/
+data/mbta_rapid_transit
+data/TravelTimes_2026
 # Cython debug symbols
 cython_debug/
 

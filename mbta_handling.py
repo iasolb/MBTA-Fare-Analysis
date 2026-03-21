@@ -1,25 +1,176 @@
 import pandas as pd
 from Research_Framework.ResearchHandler import ResearchHandler
+from typing import Optional
 
 
 def blank(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def get_combined_df(nodespath: str, gsepath: str, travel_timepath: str) -> pd.DataFrame:
-    nodesfp = "data/mbta_rapid_transit/MBTA_NODE.shp"
-    gsefp = "data/GSE.csv"
-    travel_timesfp = "data/TravelTimes_2026/2026-02_HRTravelTimes.csv"
+def time_bucket(t, dt: Optional[bool] = False) -> str:
+    # Extract hour from string like '(17:00:00)'
+    if not dt:
+        hour = int(t.strip("()").split(":")[0])
+    else:
+        hour = t
+    if 5 <= hour < 7:
+        return "Early Morning"
+    elif 7 <= hour < 10:
+        return "AM Rush"
+    elif 10 <= hour < 15:
+        return "Midday"
+    elif 15 <= hour < 19:
+        return "PM Rush"
+    elif 19 <= hour < 22:
+        return "Evening"
+    else:
+        return "Late Night"
 
-    nodes = ResearchHandler(
-        source=nodesfp, shapefile=True, handling_function=mbta_init, initialize=True
-    )
-    gse = ResearchHandler(source=gsefp, handling_function=mbta_init, initialize=True)
-    travel_times = ResearchHandler(
-        source=travel_timesfp, handling_function=mbta_init, initialize=True
-    )
 
+def build_policy_flow(nodes_fp: str, gse_fp: str, travel_times_fp: str) -> pd.DataFrame:
+    """
+    Builds a merged DataFrame of avg travel times and source/destination gate activity
+    by station-line pair and time bucket, for policy targeting.
+    """
+    try:
+        # --- Load data ---
+        nodes = ResearchHandler(
+            source=nodes_fp, shapefile=True, handling_function=blank, initialize=True
+        )
+        gse = ResearchHandler(source=gse_fp, handling_function=blank, initialize=True)
+        travel_times = ResearchHandler(
+            source=travel_times_fp, handling_function=blank, initialize=True
+        )
 
-def mbta_init(input_df: pd.DataFrame) -> pd.DataFrame:
-    output_df = input_df.copy()
-    return output_df
+        # --- Build station table ---
+        gse.data["line"] = (
+            gse.data["route_or_line"]
+            .str.replace("Line", "", regex=False)
+            .str.strip()
+            .str.upper()
+        )
+        gse.data["station_line"] = (
+            gse.data["station_name"].str.strip() + ", " + gse.data["line"]
+        )
+        gse_cols = gse.data[
+            [
+                "service_date",
+                "time_period",
+                "station_name",
+                "station_line",
+                "gated_entries",
+            ]
+        ]
+
+        rows = []
+        node_id = 0
+        for _, row in nodes.data[["STATION", "LINE"]].iterrows():
+            for line in row["LINE"].split("/"):
+                rows.append(
+                    {
+                        "node_id": node_id,
+                        "station_line": f"{row['STATION']}, {line.strip()}",
+                        "line": line.strip(),
+                    }
+                )
+                node_id += 1
+
+        stations = pd.DataFrame(rows).set_index("node_id")
+        station_table = stations.merge(gse_cols, on="station_line", how="left")
+
+        # --- Gate activity aggregation ---
+        gates = (
+            station_table.dropna(subset=["gated_entries"])
+            .groupby(["station_line", "time_period"])["gated_entries"]
+            .mean()
+            .reset_index()
+        )
+        gates["time_bucket"] = gates["time_period"].apply(time_bucket)
+        gate_flow = (
+            gates.groupby(["station_line", "time_bucket"])["gated_entries"]
+            .sum()
+            .reset_index()
+            .rename(columns={"gated_entries": "avg_gated_entries"})
+        )
+
+        # --- Travel time prep ---
+        trips = travel_times.data[
+            [
+                "from_stop_name",
+                "to_stop_name",
+                "travel_time_sec",
+                "route_id",
+                "from_stop_departure_datetime",
+            ]
+        ].copy()
+        trips.rename(
+            columns={
+                "route_id": "line",
+                "from_stop_name": "source",
+                "to_stop_name": "destination",
+            },
+            inplace=True,
+        )
+        trips["line"] = trips["line"].str.upper()
+        trips["station_line_source"] = trips["source"] + ", " + trips["line"]
+        trips["station_line_destination"] = trips["destination"] + ", " + trips["line"]
+        trips.drop(columns=["source", "destination"], inplace=True)
+
+        # Filter to underground stations only
+        underground = set(station_table["station_line"].unique())
+        trips = trips[trips["station_line_source"].isin(underground)]
+
+        # Time bucket
+        trips.dropna(subset=["from_stop_departure_datetime"], inplace=True)
+        trips["from_stop_departure_datetime"] = pd.to_datetime(
+            trips["from_stop_departure_datetime"]
+        )
+        trips["hour"] = trips["from_stop_departure_datetime"].dt.hour
+        trips["time_bucket"] = trips["hour"].apply(lambda h: time_bucket(h, dt=True))
+
+        # --- Travel time aggregation ---
+        travel_flow = (
+            trips.groupby(
+                [
+                    "station_line_source",
+                    "station_line_destination",
+                    "line",
+                    "time_bucket",
+                ]
+            )["travel_time_sec"]
+            .mean()
+            .reset_index()
+            .rename(columns={"travel_time_sec": "avg_travel_time_sec"})
+        )
+
+        # --- Merge source gate activity ---
+        merged = (
+            travel_flow.merge(
+                gate_flow,
+                left_on=["station_line_source", "time_bucket"],
+                right_on=["station_line", "time_bucket"],
+                how="left",
+            )
+            .rename(columns={"avg_gated_entries": "source_avg_gated_entries"})
+            .drop(columns=["station_line"])
+        )
+
+        # --- Merge destination gate activity ---
+        merged = (
+            merged.merge(
+                gate_flow,
+                left_on=["station_line_destination", "time_bucket"],
+                right_on=["station_line", "time_bucket"],
+                how="left",
+            )
+            .rename(columns={"avg_gated_entries": "dest_avg_gated_entries"})
+            .drop(columns=["station_line"])
+        )
+
+        return (
+            merged.sort_values("source_avg_gated_entries", ascending=False)
+            .reset_index(drop=True)
+            .fillna({"source_avg_gated_entries": 0, "dest_avg_gated_entries": 0})
+        )
+    except Exception as e:
+        print(f"Issue initializing data. {e}")

@@ -34,7 +34,7 @@ class ResearchHandler:
                     self.data = None
             else:
                 try:
-                    raw = pd.read_csv(source)
+                    raw = pd.read_csv(source, low_memory=False)
                     self.data = handling_function(raw)
                 except Exception as e:
                     print(e)
