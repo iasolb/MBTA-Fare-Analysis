@@ -31,21 +31,21 @@ class ResearchHandler:
                     self.data = handling_function(raw)
                 except Exception as e:
                     print(e)
-                    self.data = None
+                    self.data = gpd.GeoDataFrame()
             else:
                 try:
                     raw = pd.read_csv(source, low_memory=False)
                     self.data = handling_function(raw)
                 except Exception as e:
                     print(e)
-                    self.data = None
+                    self.data = pd.DataFrame()
         else:
             try:
                 raw = source
                 self.data = handling_function(raw)
             except Exception as e:
                 print(e)
-                self.data = None
+                self.data = source
 
         self.subset = None
         self.dependent = None
