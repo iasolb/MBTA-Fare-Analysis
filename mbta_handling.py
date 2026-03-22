@@ -1,4 +1,5 @@
 import pandas as pd
+import geopandas as gpd
 from Research_Framework.ResearchHandler import ResearchHandler
 from typing import Optional
 
@@ -34,25 +35,19 @@ def build_policy_flow(nodes_fp: str, gse_fp: str, travel_times_fp: str) -> pd.Da
     """
     try:
         # --- Load data ---
-        nodes = ResearchHandler(
-            source=nodes_fp, shapefile=True, handling_function=blank, initialize=True
-        )
-        gse = ResearchHandler(source=gse_fp, handling_function=blank, initialize=True)
-        travel_times = ResearchHandler(
-            source=travel_times_fp, handling_function=blank, initialize=True
-        )
+        nodes = gpd.read_file(nodes_fp)
+        gse = pd.read_csv(gse_fp)
+        travel_times = pd.read_csv(travel_times_fp)
 
         # --- Build station table ---
-        gse.data["line"] = (
-            gse.data["route_or_line"]
+        gse["line"] = (
+            gse["route_or_line"]
             .str.replace("Line", "", regex=False)
             .str.strip()
             .str.upper()
         )
-        gse.data["station_line"] = (
-            gse.data["station_name"].str.strip() + ", " + gse.data["line"]
-        )
-        gse_cols = gse.data[
+        gse["station_line"] = gse["station_name"].str.strip() + ", " + gse["line"]
+        gse_cols = gse[
             [
                 "service_date",
                 "time_period",
@@ -64,7 +59,7 @@ def build_policy_flow(nodes_fp: str, gse_fp: str, travel_times_fp: str) -> pd.Da
 
         rows = []
         node_id = 0
-        for _, row in nodes.data[["STATION", "LINE"]].iterrows():
+        for _, row in nodes["STATION", "LINE"]].iterrows():
             for line in row["LINE"].split("/"):
                 rows.append(
                     {
@@ -94,7 +89,7 @@ def build_policy_flow(nodes_fp: str, gse_fp: str, travel_times_fp: str) -> pd.Da
         )
 
         # --- Travel time prep ---
-        trips = travel_times.data[
+        trips = travel_times[
             [
                 "from_stop_name",
                 "to_stop_name",
@@ -174,3 +169,4 @@ def build_policy_flow(nodes_fp: str, gse_fp: str, travel_times_fp: str) -> pd.Da
         )
     except Exception as e:
         print(f"Issue initializing data. {e}")
+        return pd.DataFrame()
