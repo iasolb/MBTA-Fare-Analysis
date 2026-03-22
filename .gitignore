@@ -166,8 +166,8 @@ dmypy.json
 .pytype/
 
 data/GSE/
-data/mbta_rapid_transit
-data/TravelTimes_2026
+data/mbta_rapid_transit/
+
 # Cython debug symbols
 cython_debug/
 
