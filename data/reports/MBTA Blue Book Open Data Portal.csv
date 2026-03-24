@@ -1,0 +1,3811 @@
+id,owner,created,modified,title,type,description,tags,snippet,categories,accessInformation,licenseInfo,culture,url,access,license,source,extent,industries
+"7859894afb5641ce91a2bb03599fdf5b","MBTAHUB_ADMIN","Thu, 11 Aug 2022 20:35:04 GMT","Thu, 19 Mar 2026 20:20:04 GMT","MBTA Gated Station Entries - Historical","CSV Collection","This file contains the count of unscaled station entries for gated MBTA subway, Silver Line and light rail stations by service date and 30-minute period. To note: A service date is defined as 3:00AM – 2:59AM (2:59AM the next day). An entry is measured as a successful smart card tap, credit card tap, or ticket insertion recorded at a faregate. Entries are unscaled and so do not take into account non-interaction with the fare gate (e.g. children or other free passengers, fare evasion, etc.). Entries are only provided for times when the station is open. Employee taps are included in this data. This data does not represent total ridership at a station. Faregates are held open at times for special events or emergencies and entries are not captured accurately during those times. Files are separated by calendar year for previous years, and by month for the current calendar year. Due to data issues, data is not guaranteed to be complete for any stop or date. The following explanation of ""split stations"" only applies to those stations in the MBTA system that service multiple rapid transit lines. Since validated gated entries only determine that a person entered a station, it cannot be used to determine the number of passengers that use a specific line in stations that service multiple lines. To adjust for this, we rely on Central Transportation Planning Staff (CTPS) surveys that gather passenger behavior to develop ""split factors."" These factors determine the proportion of passengers that board each of the available lines in a split station after entry. For example, at Government Center, passengers tap and enter through the main gates and may choose to take the blue line or the green line. According to the surveys, we assume that about 90% of Government Center entrants ride the green line and the remaining 10% take the blue line. For the split stations in this dataset, the entries will show up to one decimal point to account for the factors and reduce rounding error when aggregating. It will also create two rows in the dataset for the station, one for each line.
+
+Data Dictionary: Name Description Data Type Example service_date The service date of the gated station entries. Times that are within the service date, but after midnight, are listed as ocurring on the previous calendar date, e.g. entries between 12:00:00AM - 12:30:00AM on Jan 2, 2020 is listed as '2020/01/01 12:00 AM'. Date 2019/12/31, 12:00 AM time_period The start time of the 30-minute time period, in 24-hour time. Periods starting after 11:59 PM are represented as 00:00 plus their 24-hour time. For example, 1:30:00AM - 1:59:59AM is listed as '01:30:00'. String 01:30:00 stop_id GTFS-compatible stop for which gated station entries should be returned; usually provided as the parent station id. String place_wondl station_name GTFS-compatible station for which gated station entries should be returned. String Wonderland route_or_line Description of the route or service provided. String Blue Line gated_entries Property of “Gated Station Entries”. Unscaled station entries for gated heavy rail and light rail stations for date and 30-minute increment. Integer 324 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Ridership,Rapid Transit,2022,2023,2024,2025,2026","This file contains the count of gated station entries for any station with service by year from 2014 to the present year. The present year's file contains data up to the most recent month that is available. The data is updated on a one- to two-month delay.","","","CC0","en-us",,"public","CC0-1.0","Massachusetts geoDOT","",""
+"001c177f07594e7c99f193dde32284c9","MBTAHUB_ADMIN","Fri, 13 Mar 2020 18:22:20 GMT","Thu, 19 Mar 2026 20:12:37 GMT","MBTA Gated Station Entries","Feature Service","This file contains the count of unscaled station entries for gated MBTA subway, Silver Line and light rail stations by service date and 30-minute period. To note: A service date is defined as 3:00AM – 2:59AM (2:59AM the next day). An entry is measured as a successful credit card tap, smart card tap, or ticket insertion recorded at a faregate. Entries are unscaled and so do not take into account non-interaction with the fare gate (e.g. children or other free passengers, fare evasion, etc.). Entries are only provided for times when the station is open. Employee taps are included in this data. This data does not represent total ridership at a station. Faregates are held open at times for special events or emergencies and entries are not captured accurately during those times. Files are separated by calendar year for previous years, and by month for the current calendar year. Due to data issues, data is not guaranteed to be complete for any stop or date. The following explanation of ""split stations"" only applies to those stations in the MBTA system that service multiple rapid transit lines. Since validated gated entries only determine that a person entered a station, it cannot be used to determine the number of passengers that use a specific line in stations that service multiple lines. To adjust for this, we rely on Central Transportation Planning Staff (CTPS) surveys that gather passenger behavior to develop ""split factors."" These factors determine the proportion of passengers that board each of the available lines in a split station after entry. For example, at Government Center, passengers tap and enter through the main gates and may choose to take the blue line or the green line. According to the surveys, we assume that about 90% of Government Center entrants ride the green line and the remaining 10% take the blue line. For the split stations in this dataset, the entries will show up to one decimal point to account for the factors and reduce rounding error when aggregating. It will also create two rows in the dataset for the station, one for each line. MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Ridership,Rapid Transit,2024,2025,2026","This file contains the count of gated station entries for any station with service for the last two years up to the most recent month that is available. The data is updated on a one- to two-month delay. See MBTA Gated Station Entries - Historical for data by year from 2014 to present.","","Massachusetts Bay Transportation Authority","CC0",,"https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/GSE/FeatureServer","public","CC0-1.0","Massachusetts geoDOT","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"a15bbd44359840fa95423052980dc89d","MBTAHUB_ADMIN","Thu, 16 Oct 2025 17:29:13 GMT","Mon, 16 Mar 2026 14:59:21 GMT","MBTA Service Customer Satisfaction","CSV","","MBTA","This file contains the survey results to track customer satisfaction with the service, reliability, and communication of the MBTA.","","","","en-us",,"public",,"Massachusetts geoDOT","",""
+"fffd5e8ff7f042deb7834f3badf49e58","MBTAHUB_ADMIN","Fri, 06 Feb 2026 16:30:52 GMT","Fri, 06 Mar 2026 17:06:21 GMT","MBTA Rapid Transit Headways 2026","CSV Collection","This file contains the headways, or time between the
+departure time of the current trip and the departure time of the previous trip
+from the same stop, for rapid transit vehicles. It
+includes all heavy rail and light rail rapid transit lines. For Red and
+Green lines, both trunk (e.g. all Green line trains) and branch
+(e.g. Green-B trains) headways are included. For lines without branches (e.g.
+Blue line), branch route ID and branch headway will be NULL. Due to track circuit or other data issues, data is not
+guaranteed to be complete for any stop or date.
+
+Data Dictionary
+
+Each
+row represents a unique service_date-trip_id-stop_id pair
+for rail service.
+
+field name
+
+type
+
+description
+
+source
+
+example
+
+service_date
+
+date
+
+equivalent
+to GTFS-RT start_date value in Trip Descriptor as date instead
+of string
+
+GTFS-RT
+
+2024-01-01
+
+route_id
+
+string
+
+equivalent
+to GTFS-RT route_id value in Trip Descriptor
+
+GTFS-RT
+
+Orange
+
+trunk_route_id
+
+string
+
+line
+if multiple routes exist on line, otherwise route_id, e.g. Green for Green-B route, Blue for Blue route
+
+GTFS-RT
+
+Green
+
+branch_route_id
+
+string
+
+equivalent
+to GTFS-RT route_id value in Trip Descriptor for
+lines with multiple routes, NULL if line has single route,
+e.g. Green-B for Green-B route, NULL for Blue route_id.
+
+GTFS-RT
+
+Green-B
+
+trip_id
+
+string
+
+equivalent
+to GTFS-RT trip_id value in Trip Descriptor
+
+GTFS-RT
+
+62248746
+
+direction_id
+
+int
+
+equivalent
+to GTFS-RT direction_id value in Trip Descriptor
+
+GTFS-RT
+
+0
+
+direction
+
+string
+
+equivalent
+to GTFS direction value
+from directions.txt for route_id-direction_id pair
+
+GTFS
+
+East
+
+parent_station
+
+string
+
+the parent_station associated
+with the stop_id from stops.txt
+
+GTFS
+
+place-babck
+
+stop_id
+
+string
+
+equivalent
+to GTFS-RT stop_id value in VehiclePosition
+
+GTFS-RT
+
+70560
+
+stop_name
+
+string
+
+equivalent
+to GTFS stop_name from stops.txt for stop_id
+
+GTFS
+
+Babcock
+Street
+
+stop_departure_datetime
+
+datetime
+
+earliest ""IN_TRANSIT_TO"" OR
+""INCOMING_AT"" status timestamp for a trip-stop pair from GTFS-RT VehiclePosition as an Eastern datetime.
+
+GTFS-RT
+
+11/1/2023 5:24:51 AM
+
+stop_departure_sec
+
+int
+
+stop_departure_datetime as
+seconds after midnight
+
+LAMP
+Calculated
+
+20,517
+
+headway_branch_seconds
+
+int
+
+seconds
+between consecutive vehicles departing parent_station on branch_route_id
+
+LAMP
+Calculated
+
+1,387
+
+headway_trunk_seconds
+
+int
+
+seconds
+between consecutive vehicles departing parent_station on trunk_route_id
+
+LAMP
+Calculated
+
+311
+
+Changes to the data:
+
+Rapid Transit Events data is now sourced from Lightweight
+Application for Measuring Performance (LAMP). To learn more about
+LAMP, please visit LAMP Website.
+
+The data changed as follows:
+
+Trunk_route_id field
+is added.
+
+Branch_route_id field
+is added.
+
+Trip_id field
+is added.
+
+Direction field is
+added.
+
+Destination is now
+replaced conceptually by branch_route_id.
+
+Parent_station field
+is added.
+
+Stop_name field
+is added.
+
+Start_time_sec field
+is no longer included (if needed can be calculated as stop_departure_seconds
+- headway_*_seconds)
+
+Stop_departure_datetime field
+is added.
+
+End_time_sec is now stop_departure_sec.
+
+Headway_time_sec is changed
+from long to wide and is now headway_branch_seconds and headway_trunk_seconds.
+
+MassDOT/MBTA shall not be held liable for any errors in this
+data. This includes errors of omission, commission, errors concerning the
+content of the data, and relative and positional accuracy of the data. This
+data cannot be construed to be a legal document. Primary sources from which
+this data was compiled must be consulted for verification of information
+contained in this data.","Headway,MBTA,Rapid Transit,System Data,Vehicle Location Data,2026","This file contains the headways, or time between the departure time of the current trip and the departure time of the previous trip from the same ""destination"", for rapid transit vehicles, for 2026.","","","CC0","en-us",,"public","CC0-1.0","Office of Performance Management & Innovation","-73.591907,41.166258,-69.752209,42.956414",""
+"9d8a8cad277545c984c1b25ed10b7d3c","MBTAHUB_ADMIN","Tue, 10 Feb 2026 15:21:38 GMT","Thu, 05 Mar 2026 20:16:23 GMT","MBTA Bus Arrival Departure Times 2026","CSV Collection","This file contains the arrival and departure events for buses up to the most recent completed month of 2026. Due to data collection issues, data is not guaranteed to be complete for any stop or date. Data Dictionary: Name Description Data Type Example service_date Date on which the trip took place. Service dates run from around 2:00AM - 1:59:59AM Date 2019-12-31 route_id Route Id String 01 direction_id Identifies whether the trip is traveling inbound or outbound String Inbound half_trip_id Identification for the one way trip Integer 40836717 stop_id GTFS-compatible stop Integer 75 time_point_id The code for the timepoint String mit time_point_order The order of this timepoint in the trip Integer 4 point_type Identifies whether the stop is the starting point, midpoint, or endpoint for the trip String Midpoint standard_type Identifies whether the trip should be evaluated on the schedule standard or headway standard. String Headway scheduled The time the trip was scheduled to depart the stop. The scheduled time should not be used to evaluated reliability if this trip is evaluated on the headway standard. Only the headway and run time should be used per the Service Delivery Policy. Time 12:30 AM actual The time the trip actually departed the timepoint. Time 12:29 AM scheduled_headway The scheduled time between the trip and the previous trip at the stop, in seconds. NULL if this trip is evaluated on the schedule standard. Integer 1200 headway The actual time between the trip and the previous trip at the stop, in seconds. NULL if this trip is evaluated on the schedule standard or if this is the last stop on the trip (endpoint). Endpoints are evaluated by whether the trip runtime is within 120% of the scheduled run time. Integer 1163 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Bus,Headway,MBTA,System Data,Vehicle Location Data,2026","Arrival and Departure Times for MBTA Buses in 2026","","Massachusetts Bay Transportation Authority","CC0","en-us",,"public","CC0-1.0","Massachusetts geoDOT","0,0,0,0",""
+"a6d2a50d28fc43d8a4f86f73085d17b0","MBTAHUB_ADMIN","Tue, 10 Feb 2026 16:29:25 GMT","Thu, 05 Mar 2026 20:09:39 GMT","MBTA Rapid Transit Events 2026","CSV Collection","This file contains the arrival and departure events for rapid transit rail lines for 2025. It
+includes all heavy rail and light rail rapid transit lines. These events are
+used to calculate travel times, dwell times, and headways. Due to track circuit
+or other data issues, data is not guaranteed to be complete for any stop or
+date.
+
+Data Dictionary
+
+Each
+row represents a unique service_date-trip_id-stop_id-event unit for rail
+service.
+
+field name
+
+type
+
+description
+
+source
+
+example
+
+service_date
+
+date
+
+equivalent
+to GTFS-RT start_date value in Trip Descriptor as date instead
+of string.
+
+GTFS-RT
+
+2024-01-01
+
+route_id
+
+string
+
+equivalent
+to GTFS-RT route_id value in Trip Descriptor.
+
+GTFS-RT
+
+Green-B
+
+trunk_route_id
+
+string
+
+line if multiple routes exist on line, otherwise route_id,
+e.g. Green for Green-B route, Blue for Blue route.
+
+GTFS-RT
+
+Green
+
+trip_id
+
+string
+
+equivalent
+to GTFS-RT trip_id value in Trip Descriptor.
+
+GTFS-RT
+
+ADDED-1581804432
+
+direction_id
+
+int
+
+equivalent
+to GTFS-RT direction_id value in Trip Descriptor.
+
+GTFS-RT
+
+0
+
+direction
+
+string
+
+equivalent to GTFS direction value from directions.txt for route_id-direction_id pair.
+
+GTFS
+
+East
+
+parent_station
+
+string
+
+the parent_station associated
+with the stop_id from stops.txt.
+
+GTFS
+
+place-wascm
+
+stop_id
+
+string
+
+equivalent
+to GTFS-RT stop_id value in VehiclePosition.
+
+GTFS-RT
+
+70560
+
+stop_name
+
+string
+
+equivalent to GTFS stop_name from stops.txt for stop_id.
+
+GTFS
+
+Washington
+Street
+
+sync_stop_sequence
+
+int
+
+stop sequence that is consistent across all branches of
+a trunk_route_id for
+a particular parent_station.
+
+Lamp Calculated
+
+3
+
+vehicle_id
+
+string
+
+equivalent
+to GTFS-RT id value in VehicleDescriptor.
+
+GTFS-RT
+
+R-545A9644
+
+vehicle_label
+
+string
+
+equivalent
+to GTFS-RT label value in VehicleDescriptor.
+
+GTFS-RT
+
+3830-3652
+
+event_type
+
+string
+
+ARR:
+""STOPPED_AT""
+status for a trip-stop pair from GTFS-RT VehiclePosition.
+DEP:
+""IN_TRANSIT_TO"" OR ""INCOMING_AT"" status
+for a trip-stop pair from GTFS-RT VehiclePosition.
+
+GTFS-RT
+
+ARR
+
+event_time
+
+datetime
+
+For
+ARR:
+earliest
+""STOPPED_AT"" status timestamp for a trip-stop pair from
+GTFS-RT VehiclePosition or
+last arrival timestamp from GTFS-RT StopTimeUpdate if
+VehiclePosition value is not available as an Eastern datetime.
+For
+DEP:
+earliest ""IN_TRANSIT_TO"" OR
+""INCOMING_AT"" status timestamp for a trip-stop pair from GTFS-RT VehiclePosition as an Eastern datetime.
+
+GTFS-RT
+
+11/1/2023 5:24:51 AM
+
+event_time_sec
+
+int
+
+event_time in
+seconds after midnight.
+
+LAMP
+Calculated
+
+30955
+
+Changes to the data
+
+Rapid Transit Events data is now sourced from Lightweight
+Application for Measuring Performance (LAMP). To learn more about
+LAMP, please visit LAMP website.
+
+The data changed as follows:
+
+Trunk_route_id field
+is added.
+
+Direction field is
+added.
+
+Parent_station field is
+added.
+
+Stop_name field
+is added. Stop_id is now
+string format.
+
+Stop_sequence
+is now sync_stop_sequence, please see LAMP documentation
+for differences.
+
+Event_time is now datetime
+format.
+
+MassDOT/MBTA shall not be held liable for any errors in this
+data. This includes errors of omission, commission, errors concerning the
+content of the data, and relative and positional accuracy of the data. This
+data cannot be construed to be a legal document. Primary sources from which
+this data was compiled must be consulted for verification of information
+contained in this data.","MBTA,Transit,Events,2026","MBTA Rapid Transit Events in 2026","","Massachusetts Bay Transportation Agency","CC0","en-us",,"public","CC0-1.0","Massachusetts geoDOT","0,0,0,0",""
+"d233f1820cf54139bd18e75e30dd2c6c","MBTAHUB_ADMIN","Tue, 10 Feb 2026 14:39:24 GMT","Thu, 05 Mar 2026 19:52:10 GMT","MBTA Service Alerts 2026","CSV Collection","Data Dictionary: Name Description Data Type Example alert_id Unique identifier for this Alert. Subsequent updates to it will have the same ID. integer 293631 cause Cause of this alert. string construction cause_detail Description of the cause of the alert that allows for agency-specific language; more specific than the Cause. string traffic effect The effect of this problem on the affected entity. string detour effect_detail Description of the effect of the alert that allows for agency-specific language; more specific than the Effect. string parking_issue severity_level The severity of the alert. string severe severity How severe the alert is from least (0) to most (10) severe. integer 5 header Header for the alert. string description Description for the alert string alert_lifecycle Whether the alert is in effect now, will be in the future, or has been for a while. string ongoing duration_certainty Whether the alert has a known, unknown, or estimated end. string estimated service_effect Brief summary of effect and affected service. string Route 131 delay timeframe_text Human readable summary of when service will be disrupted. string Wednesday through Friday recurrence_text Human readable summary of how active_period values are repeating (ex: “daily”, “weekdays”). string 2 days a week created_dt Creation time, in EST Datetime. date 2019-02-0110:02:13 last_modified_dt Last meaningful modification time, in EST Datetime. date 2020-01-2806:52:30 closed_dt Closed time, in EST Datetime date 2023-09-1807:20:24 active_period_start_date Start date when the alert should be shown to the user. date 2021-02-26 active_period_start_dt Start time when the alert should be shown to the user. date 2021-02-2610:00:00 active_period_end_dt End time when the alert should be shown to the user. date 2023-07-1309:14:56 last_push_notification_dt Time when message about alert has been sent to user date 2021-02-2611:23:00 route_id Route id of entities whose users we should notify of this alert. string CR-Haverhill route_type Route type of entities whose users we should notify of this alert. integer 2 direction_id Direction id for the entities whose users we should notify of this alert. integer 1 stop_id Stop id for the entity whose users we should notify of this alert. string 2827 facility_id Facility of the entity whose users we should notify of this alert. string subplat-WML-0340 activities Activity of the entity whose users we should notify of this alert. string Board|Exit MBTA Alerts data is sourced from Lightweight Application for Measuring Performance (LAMP). To learn more about LAMP, please visit LAMP website. MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Alerts,MBTA,Performance,2026","This file contains the MBTA GTFS Realtime alerts for 2026.","","","","en-us",,"public",,"Office of Performance Management & Innovation","0,0,0,0",""
+"ea10b2634f9945ac9fad0d50c956624a","MBTAHUB_ADMIN","Fri, 05 Apr 2019 13:06:36 GMT","Thu, 19 Feb 2026 14:52:21 GMT","MBTA Blue Book Open Data Portal","Hub Site Application","DO NOT DELETE OR MODIFY THIS ITEM. This item is managed by the ArcGIS Hub application. To make changes to this site, please visit https://hub.arcgis.com/admin/","Hub Site","","/Categories/Administrative/Gallerys","","","en","https://mbta-massdot.opendata.arcgis.com","public",,"Office of Performance Management & Innovation","-179.99999550841463,-88.99999992161116,179.99999550841463,88.99999992161116",""
+"59b5c61e8e9f42f9a3745f7ad63d07d6","MBTAHUB_ADMIN","Mon, 27 Feb 2023 20:00:34 GMT","Tue, 17 Feb 2026 18:16:40 GMT","MBTA Commuter Rail Ridership by Service Date and Line","CSV","null","MBTA,Ridership,Commuter Rail","This data provides MBTA Commuter Rail Ridership estimates by service date and line. Values are not guaranteed to be complete for any line or service date. Weekday values are provided for dates June 2020 and later, and weekday and weekend values are provided for dates July 2021 and later. Estimates are based on scaled conductor counts.  ","","","","en-us",,"public",,"Massachusetts geoDOT","",""
+"2048258a18354256a650d41f8fe4532c","MBTAHUB_ADMIN","Mon, 13 Jan 2025 17:56:08 GMT","Tue, 17 Feb 2026 18:15:38 GMT","MBTA Monthly Ridership By Mode and Line","Feature Service","For the data prior to July 2018, please visit archive.","MBTA,Ridership,Bus,Commuter Rail,Ferry,Rapid Transit,2022,2023,2024,The RIDE,2025","This file contains the total and average daily ridership per month by day type (e.g. weekday) and mode (Bus, Rapid Transit, Commuter Rail, Ferry, and the RIDE) and line (for Rapid Transit). The data is available from July 2018 to the most recent month.","","","CC0","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/NTD_Reporting/FeatureServer","public","CC0-1.0","Massachusetts geoDOT","",""
+"ae21643bbe60488db8520cc694f882aa","MBTAHUB_ADMIN","Thu, 18 Jun 2020 15:46:34 GMT","Tue, 17 Feb 2026 17:58:45 GMT","MBTA Ferry Daily Ridership by Trip, Route, and Stop","Feature Service","null","MBTA,Ferry,Ridership","This file contains the aggregated percentage of on-time trips for the commuter ferry service. It contains data for the full calendar year for past years and up to the most recent month for the current year.","","Massachusetts Bay Transportation Authority","CC0",,"https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_Ferry_Daily_Ridership_by_Trip_Route_and_Stop/FeatureServer","public","CC0-1.0","Massachusetts geoDOT","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"e97a76a5df394583a40ac9eaee54e87c","MBTAHUB_ADMIN","Tue, 04 May 2021 19:18:22 GMT","Tue, 17 Feb 2026 17:57:47 GMT","MBTA Ferry Reliability","Feature Service","This file contains the aggregated percentage of on-time trips for the commuter ferry service. It contains data for the full calendar year for past years and up to the most recent completed year. Due to other data issues, data is not guaranteed to be complete for any line or date. Data Dictionary: Name Description Data Type Example service_month Month for which service was provided. String July service_year Year for which service was provided. String 2015 fiscal_year Fiscal year for which the data was reported. String 2016 line_id Shorthand identifier for one of three ferry routes. String F2H line_name Full name for one of three ferry routes. String Hingham/Hull on_time_performance Proportion of on-time ferry trips for any line and month. Double .9987 note Note about data point String Ferry service suspended MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Reliability,Ferry","This file contains the aggregated percentage of on-time trips for the commuter ferry service. It contains data for the full calendar year for past years and up to the most recent month for the current year.","","Massachusetts Bay Transportation Authority","CC0","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_Ferry_Reliability/FeatureServer","public","CC0-1.0","Massachusetts geoDOT","",""
+"d73ed67e4cc84a84b818ea2c5caef696","MBTAHUB_ADMIN","Fri, 21 Apr 2023 20:53:08 GMT","Tue, 10 Feb 2026 19:26:16 GMT","MBTA Rapid Transit Speed Restrictions by Day","CSV Collection","This file contains data on speed restrictions on MBTA rapid transit lines. Data will be updated monthly.
+
+The new daily data structure differs from the initial January and February 2023 data structures. This table contains a row for every day a restriction is active, making it easy to obtain a complete list of speed restrictions active on the system on any given day. If a restriction was either cleared or opened on a particular day, the row for that restriction-day will correspond to the opening/closing of the restriction (with Restriction_Status = ‘Restriction Opened’ or Restriction_Status = ‘Restriction Cleared’). Data dictionary:
+
+Name
+
+Description
+
+Calendar_Date
+
+Date to which the row's information pertains. There is one row
+per day each restriction has been active since Jan 1, 2023.
+
+ID
+
+Unique identifier for the speed restriction
+
+Track_Direction
+
+Which track the restriction affects, i.e. Northbound
+
+Line
+
+MBTA Rapid Transit Line
+
+Branch
+
+MBTA Rapid Transit Branch
+
+Track_Name
+
+Description of track section
+
+Location_Description
+
+Location of speed restriction
+
+Loc_GTFS_Stop_ID
+
+GTFS-compatible stop_id for restrictions at stations or
+pipe-separated stop_id’s for restrictions between stations
+
+Location_Type
+
+Where the restriction is (Station or Between Stations)
+
+Direction_Sort
+
+Short code specifying the line, track direction, and section
+of track
+
+Restriction_Status
+
+Can take values ‘Active Restriction’, ‘Restriction Cleared’,
+or ‘Restriction Opened’. A restriction will be listed as Active for all dates
+between when it is opened and cleared.
+
+Date_Restriction_Reported
+
+Date on which restriction was initially reported
+
+Date_Restriction_Cleared
+
+Date on which restriction was cleared, if applicable.
+
+Restriction_Speed_MPH
+
+Maximum speed on track section
+
+Restriction_Reason
+
+Reason for speed restriction; see below table
+
+Restriction_Distance_Feet
+
+Length of speed-restricted track, in feet
+
+Restriction_Distance_Miles
+
+Length of speed-restricted track, in miles
+
+Line_Restricted_Track_Pct
+
+Restriction_Distance_Miles/Line_Total_Track_Miles
+
+Line_Total_Track_Miles
+
+Length of track indicated in Track_Name
+
+Systemwide_Restricted_Track_Pct
+
+Restriction_Distance_Miles/Systemwide_Total_Track_Miles
+
+Systemwide_Total_Track_Miles
+
+Total length of track across all lines
+
+SR_Restriction_Distance_Span
+
+Single Segment or Multi-Segment restriction. Multi-Segment
+restrictions will have multiple rows each day, one for each Loc_GTFS_Stop_ID
+value.
+
+Restriction_Path
+
+Start | End if the restriction is a Single Segment; otherwise
+specifies position within a Multi-Segment restriction (Start, Middle, or End)
+
+Restriction_Days_Active_On_Calendar_Day
+
+Number of days restriction has been active, for currently open
+restrictions. As of the row’s Calendar_Day.
+
+Restriction_Days_to_Clear
+
+Number of days between restriction opening and clearing date,
+if applicable.
+
+Daily_Restriction_Count_Start
+
+1 for active restrictions that carried over from the previous day,
+0 otherwise. Can be summed within the day to provide the number of active
+restrictions at the beginning of the report day.
+
+Month_Restriction_Count_Start
+
+1 for active restrictions that carried over from the previous
+month, 0 otherwise. Can be summed within the month to provide the number of
+active restrictions at the beginning of the month. (Should only contain
+nonzero values on the 1st of each month.)
+
+Restriction_Count_New
+
+1 for a restriction opened during the month, 0 otherwise. Can
+be summed to provide the number of restrictions opened during the report
+month.
+
+Restriction_Count_Cleared
+
+-1 for a restriction cleared during the month, 0 otherwise.
+Can be summed to find the number of restrictions cleared during the report
+month.
+
+Month_Restriction_Count_End
+
+1 for a restriction active at the end of the month, 0
+otherwise. Can be summed to find the number of restrictions active at the end
+of the report month. (Should only contain nonzero values on the last day of
+each month.)
+
+Daily_Restriction_Count_End
+
+1 for a restriction active at the end of the day, 0 otherwise.
+Can be summed within the day to find the number of restrictions active at the
+end of the report day.
+
+Restriction Reasons
+
+Category
+
+Definition
+
+Track Defects or abnormal track characteristics are necessitating
+slower speeds. Most speed restrictions fall into this category.
+
+Power
+
+Defects or abnormal conditions in power assets are
+necessitating slower speeds.
+
+Signals
+
+Defects or abnormal conditions in signal assets are necessitating
+slower speeds.
+
+Structural
+
+Defects or abnormal conditions in structural assets are
+necessitating slower speeds.
+
+Construction
+
+As a direct effect of construction, speeds must be reduced.
+E.g. track settling after construction, slowdowns due to proximity to work
+zone.
+
+Weather
+
+Weather conditions are necessitating slower speeds. E.g.
+sometimes extreme changes in temperature, wind, or precipitation might
+necessitate reduced speeds.
+
+Vehicle
+
+An issue with the vehicles is necessitating restricting the
+speed in certain areas. E.g. Enhanced Station Stopping
+
+MassDOT/MBTA shall not be held liable for any
+errors in this data. This includes errors of omission, commission, errors
+concerning the content of the data, and relative and positional accuracy of the
+data. This data cannot be construed to be a legal document. Primary sources
+from which this data was compiled must be consulted for verification of
+information contained in this data.","MBTA,System Data,Speed Restrictions,2023,2024,2025","","","","CC0","en-us",,"public","CC0-1.0","Massachusetts geoDOT","",""
+"155ab68df00145cabddfb90377201b0e","MBTAHUB_ADMIN","Tue, 01 Feb 2022 18:08:05 GMT","Tue, 10 Feb 2026 18:14:55 GMT","Rapid Transit and Bus Prediction Accuracy Data","CSV","This file contains the prediction accuracy for subway and bus. Prediction accuracy is determined by the number of accurate predictions vs the number of total predictions for each ""bin"" or timeframe. Data is not guaranteed to be complete for any line or date. There is a known gap in Orange Line data from 09/02/2022 to 09/16/2022. Name Description Data Type Example weekly Date representing one week's worth of data. For both bus and subway, the week is labeled as a Friday and represents data from the previous Friday up till the Thursday the day before. (05/23/2025 represents data from 05/16/2025 to 05/22/2025.) The date is based on ""service day"", so ""May 1"" means May 1, 3:00am ET until May 2, 2:59am ET. Date 05/23/2025 mode Either ""bus"" for bus predictions, or ""subway"" for Red, Orange, Green-[B/C/D/E], Blue, and Mattapan predictions. String bus route_id The subway route the data is for. Our bus data provider does not have this data at a per-route level. String Green-B arrival_departure For bus, whether the data is about the timing of an arrival at a bus stop, or the departure from that bus stop. Bus only supports ""departure"". Absent on subway data because subway uses a ""blended"" approach of departure predictions at terminals, and arrival predictions otherwise. String departure bin The bin a prediction belongs to based on how far in the future the predicted event is for. The options are ""0-3 min"", ""3-6 min"", ""6-12 min"", and ""12-30 min"". String 0-3 min num_predictions The count of predictions sampled that meet the criteria of the other fields. Integer 50000 num_accurate_predictions Of the num_predictions, how many of them were considered accurate, where ""accurate"" means the predicted number of seconds was within a threshold of the actual number of seconds, based on the bin. For a given bin, the passing threshold is if a vehicle arrives: 0-3 min: 60 seconds early to 60 seconds late, 3-6 min: 90 seconds early to 120 seconds late, 6-12 min: 150 seconds early to 210 seconds late, 12:30 min: 240 seconds early to 360 seconds late. Integer 30000 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Bus,Rapid Transit,Performance,2022,2023,2024,2025","","","","","en-us",,"public",,"Office of Performance Management & Innovation","0,0,0,0",""
+"e2344a2297004b36b82f57772926ed1a","MBTAHUB_ADMIN","Fri, 07 Feb 2025 19:42:50 GMT","Tue, 10 Feb 2026 15:50:48 GMT","MBTA Rapid Transit Events 2025","CSV Collection","This file contains the arrival and departure events for rapid transit rail lines for 2025. It
+includes all heavy rail and light rail rapid transit lines. These events are
+used to calculate travel times, dwell times, and headways. Due to track circuit
+or other data issues, data is not guaranteed to be complete for any stop or
+date.
+
+Data Dictionary
+
+Each
+row represents a unique service_date-trip_id-stop_id-event unit for rail
+service.
+
+field name
+
+type
+
+description
+
+source
+
+example
+
+service_date
+
+date
+
+equivalent
+to GTFS-RT start_date value in Trip Descriptor as date instead
+of string.
+
+GTFS-RT
+
+2024-01-01
+
+route_id
+
+string
+
+equivalent
+to GTFS-RT route_id value in Trip Descriptor.
+
+GTFS-RT
+
+Green-B
+
+trunk_route_id
+
+string
+
+line if multiple routes exist on line, otherwise route_id,
+e.g. Green for Green-B route, Blue for Blue route.
+
+GTFS-RT
+
+Green
+
+trip_id
+
+string
+
+equivalent
+to GTFS-RT trip_id value in Trip Descriptor.
+
+GTFS-RT
+
+ADDED-1581804432
+
+direction_id
+
+int
+
+equivalent
+to GTFS-RT direction_id value in Trip Descriptor.
+
+GTFS-RT
+
+0
+
+direction
+
+string
+
+equivalent to GTFS direction value from directions.txt for route_id-direction_id pair.
+
+GTFS
+
+East
+
+parent_station
+
+string
+
+the parent_station associated
+with the stop_id from stops.txt.
+
+GTFS
+
+place-wascm
+
+stop_id
+
+string
+
+equivalent
+to GTFS-RT stop_id value in VehiclePosition.
+
+GTFS-RT
+
+70560
+
+stop_name
+
+string
+
+equivalent to GTFS stop_name from stops.txt for stop_id.
+
+GTFS
+
+Washington
+Street
+
+sync_stop_sequence
+
+int
+
+stop sequence that is consistent across all branches of
+a trunk_route_id for
+a particular parent_station.
+
+Lamp Calculated
+
+3
+
+vehicle_id
+
+string
+
+equivalent
+to GTFS-RT id value in VehicleDescriptor.
+
+GTFS-RT
+
+R-545A9644
+
+vehicle_label
+
+string
+
+equivalent
+to GTFS-RT label value in VehicleDescriptor.
+
+GTFS-RT
+
+3830-3652
+
+event_type
+
+string
+
+ARR:
+""STOPPED_AT""
+status for a trip-stop pair from GTFS-RT VehiclePosition.
+DEP:
+""IN_TRANSIT_TO"" OR ""INCOMING_AT"" status
+for a trip-stop pair from GTFS-RT VehiclePosition.
+
+GTFS-RT
+
+ARR
+
+event_time
+
+datetime
+
+For
+ARR:
+earliest
+""STOPPED_AT"" status timestamp for a trip-stop pair from
+GTFS-RT VehiclePosition or
+last arrival timestamp from GTFS-RT StopTimeUpdate if
+VehiclePosition value is not available as an Eastern datetime.
+For
+DEP:
+earliest ""IN_TRANSIT_TO"" OR
+""INCOMING_AT"" status timestamp for a trip-stop pair from GTFS-RT VehiclePosition as an Eastern datetime.
+
+GTFS-RT
+
+11/1/2023 5:24:51 AM
+
+event_time_sec
+
+int
+
+event_time in
+seconds after midnight.
+
+LAMP
+Calculated
+
+30955
+
+Changes to the data
+
+Rapid Transit Events data is now sourced from Lightweight
+Application for Measuring Performance (LAMP). To learn more about
+LAMP, please visit LAMP website.
+
+The data changed as follows:
+
+Trunk_route_id field
+is added.
+
+Direction field is
+added.
+
+Parent_station field is
+added.
+
+Stop_name field
+is added. Stop_id is now
+string format.
+
+Stop_sequence
+is now sync_stop_sequence, please see LAMP documentation
+for differences.
+
+Event_time is now datetime
+format.
+
+MassDOT/MBTA shall not be held liable for any errors in this
+data. This includes errors of omission, commission, errors concerning the
+content of the data, and relative and positional accuracy of the data. This
+data cannot be construed to be a legal document. Primary sources from which
+this data was compiled must be consulted for verification of information
+contained in this data.","Events,MBTA,Transit,2025","MBTA Rapid Transit Events in 2025","","Massachusetts Bay Transportation Agency","CC0","en-us",,"public","CC0-1.0","Massachusetts geoDOT","0,0,0,0",""
+"924df13d845f4907bb6a6c3ed380d57a","MBTAHUB_ADMIN","Thu, 06 Feb 2025 22:11:11 GMT","Tue, 10 Feb 2026 15:17:48 GMT","MBTA Bus Arrival Departure Times 2025","CSV Collection","This file contains the arrival and departure events for buses up to the most recent completed month of 2025. Due to data collection issues, data is not guaranteed to be complete for any stop or date. Data Dictionary: Name Description Data Type Example service_date Date on which the trip took place. Service dates run from around 2:00AM - 1:59:59AM Date 2019-12-31 route_id Route Id String 01 direction_id Identifies whether the trip is traveling inbound or outbound String Inbound half_trip_id Identification for the one way trip Integer 40836717 stop_id GTFS-compatible stop Integer 75 time_point_id The code for the timepoint String mit time_point_order The order of this timepoint in the trip Integer 4 point_type Identifies whether the stop is the starting point, midpoint, or endpoint for the trip String Midpoint standard_type Identifies whether the trip should be evaluated on the schedule standard or headway standard. String Headway scheduled The time the trip was scheduled to depart the stop. The scheduled time should not be used to evaluated reliability if this trip is evaluated on the headway standard. Only the headway and run time should be used per the Service Delivery Policy. Time 12:30 AM actual The time the trip actually departed the timepoint. Time 12:29 AM scheduled_headway The scheduled time between the trip and the previous trip at the stop, in seconds. NULL if this trip is evaluated on the schedule standard. Integer 1200 headway The actual time between the trip and the previous trip at the stop, in seconds. NULL if this trip is evaluated on the schedule standard or if this is the last stop on the trip (endpoint). Endpoints are evaluated by whether the trip runtime is within 120% of the scheduled run time. Integer 1163 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Bus,System Data,Headway,Vehicle Location Data,2025","MBTA Bus Arrival Departure Times for 2025
+","","Massachusetts Bay Transportation Authority","CC0","en-us",,"public","CC0-1.0","Massachusetts geoDOT","",""
+"ef115f7cf6684360b040b6d1d033eff0","MBTAHUB_ADMIN","Thu, 06 Feb 2025 21:46:22 GMT","Tue, 10 Feb 2026 14:34:56 GMT","MBTA Service Alerts 2025","CSV Collection","Data Dictionary: Name Description Data Type Example alert_id Unique identifier for this Alert. Subsequent updates to it will have the same ID. integer 293631 cause Cause of this alert. string construction cause_detail Description of the cause of the alert that allows for agency-specific language; more specific than the Cause. string traffic effect The effect of this problem on the affected entity. string detour effect_detail Description of the effect of the alert that allows for agency-specific language; more specific than the Effect. string parking_issue severity_level The severity of the alert. string severe severity How severe the alert is from least (0) to most (10) severe. integer 5 header Header for the alert. string description Description for the alert string alert_lifecycle Whether the alert is in effect now, will be in the future, or has been for a while. string ongoing duration_certainty Whether the alert has a known, unknown, or estimated end. string estimated service_effect Brief summary of effect and affected service. string Route 131 delay timeframe_text Human readable summary of when service will be disrupted. string Wednesday through Friday recurrence_text Human readable summary of how active_period values are repeating (ex: “daily”, “weekdays”). string 2 days a week created_dt Creation time, in EST Datetime. date 2019-02-0110:02:13 last_modified_dt Last meaningful modification time, in EST Datetime. date 2020-01-2806:52:30 closed_dt Closed time, in EST Datetime date 2023-09-1807:20:24 active_period_start_date Start date when the alert should be shown to the user. date 2021-02-26 active_period_start_dt Start time when the alert should be shown to the user. date 2021-02-2610:00:00 active_period_end_dt End time when the alert should be shown to the user. date 2023-07-1309:14:56 last_push_notification_dt Time when message about alert has been sent to user date 2021-02-2611:23:00 route_id Route id of entities whose users we should notify of this alert. string CR-Haverhill route_type Route type of entities whose users we should notify of this alert. integer 2 direction_id Direction id for the entities whose users we should notify of this alert. integer 1 stop_id Stop id for the entity whose users we should notify of this alert. string 2827 facility_id Facility of the entity whose users we should notify of this alert. string subplat-WML-0340 activities Activity of the entity whose users we should notify of this alert. string Board|Exit MBTA Alerts data is sourced from Lightweight Application for Measuring Performance (LAMP). To learn more about LAMP, please visit LAMP website. MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Performance,Alerts,2025","This file contains the MBTA GTFS Realtime alerts for 2025.","","","","en-us",,"public",,"Office of Performance Management & Innovation","0,0,0,0",""
+"682fd13544ac4c518620019a1cb819b1","MBTAHUB_ADMIN","Fri, 06 Feb 2026 16:53:15 GMT","Fri, 06 Feb 2026 16:55:48 GMT","MBTA Rapid Transit Travel Times 2026","CSV Collection","This file contains the travel times
+between origin and destination pairs on a single line.
+
+It includes
+all heavy rail and light rail rapid transit lines. These travel times are
+calculated from the departure time at the from_stop to the arrival time
+at the to_stop. Due to track circuit or other data issues, data is not
+guaranteed to be complete for any origin-destination pair or date.
+
+Data Dictionary
+
+Each
+row represents a unique service_date-trip_id-from_stop_id-to_stop_id
+unit for rail service.
+
+field name
+
+type
+
+description
+
+source
+
+example
+
+service_date
+
+date
+
+equivalent
+to GTFS-RT start_date value in Trip Descriptor as date instead
+of string
+
+GTFS-RT
+
+2024-01-01
+
+route_id
+
+string
+
+equivalent
+to GTFS-RT route_id value in Trip Descriptor
+
+GTFS-RT
+
+Orange
+
+trip_id
+
+string
+
+equivalent
+to GTFS-RT trip_id value in Trip Descriptor
+
+GTFS-RT
+
+62248746
+
+direction_id
+
+int
+
+equivalent
+to GTFS-RT direction_id value in Trip Descriptor
+
+GTFS-RT
+
+0
+
+direction
+
+string
+
+equivalent
+to GTFS direction value from directions.txt for route_id-direction_id pair
+
+GTFS
+
+East
+
+from_parent_station
+
+string
+
+stop_name of the parent_station associated with the stop_id from stops.txt for origin
+stop.
+
+GTFS
+
+place-amory
+
+from_stop_id
+
+string
+
+equivalent
+to GTFS-RT stop_id value in VehiclePosition
+for origin stop.
+
+GTFS-RT
+
+170141
+
+from_stop_name
+
+string
+
+equivalent to GTFS stop_name from stops.txt for destination
+stop_id.
+
+GTFS
+
+Amory Street
+
+to_parent_station
+
+string
+
+stop_name of the parent_station associated with the stop_id from stops.txt for destination stop.
+
+GTFS
+
+place-babck
+
+to_stop_id
+
+string
+
+equivalent
+to GTFS-RT stop_id value in VehiclePosition for
+destination stop.
+
+GTFS-RT
+
+70560
+
+to_stop_name
+
+string
+
+equivalent
+to GTFS stop_name from stops.txt for origin
+stop_id.
+
+GTFS
+
+Babcock
+Street
+
+from_stop_departure_datetime
+
+datetime
+
+earliest ""IN_TRANSIT_TO"" OR
+""INCOMING_AT"" status timestamp from origin stop (previous stop) from GTFS-RT VehiclePosition as an Eastern datetime.
+
+GTFS-RT
+
+11/1/2023 5:24:51 AM
+
+from_stop_departure_sec
+
+int
+
+from_stop_departure_datetime as
+seconds after midnight
+
+LAMP
+Calculated
+
+84912
+
+to_stop_arrival_datetime
+
+datetime
+
+earliest
+""STOPPED_AT"" status timestamp for destination stop from
+GTFS-RT VehiclePosition or
+last arrival timestamp from GTFS-RT StopTimeUpdate if
+VehiclePosition value is not available as an Eastern datetime.
+
+GTFS-RT
+
+11/1/2023 5:25:34 AM
+
+to_stop_arrival_sec
+
+int
+
+to_stop_arrival_datetime as
+seconds after midnight
+
+LAMP
+Calculated
+
+84992
+
+travel_time_sec
+
+int
+
+seconds
+the vehicle spent traveling between origin stop and
+destination stop on trip.
+
+Calculated
+for Open Data Portal
+
+80
+
+Changes to the data
+
+Rapid Transit Travel Time data is now sourced from Lightweight
+Application for Measuring Performance (LAMP). To learn more about
+LAMP, please visit LAMP website.
+
+The data changed as follows:
+
+Trip_id field
+is added.
+
+Direction field is
+added.
+
+From_parent_station field
+is added.
+
+From_stop_name field
+is added.
+
+To_parent_station field
+is added.
+
+To_stop_name field
+is added.
+
+From_stop_departure_datetime field
+is added.
+
+To_stop_arrival_datetime field
+is added.
+
+Start_time_sec is now from_stop_departure_sec.
+
+End_time_sec is now to_stop_arrival_sec.
+
+MassDOT/MBTA shall not be held liable for any errors in this
+data. This includes errors of omission, commission, errors concerning the
+content of the data, and relative and positional accuracy of the data. This
+data cannot be construed to be a legal document. Primary sources from which
+this data was compiled must be consulted for verification of information
+contained in this data.","Rapid Transit,System Data,Travel Times,Vehicle Location Data,2026","This file contains the travel times between origin and destination pairs on a single line.
+
+It includes all heavy rail and light rail rapid transit lines. These travel times are calculated from the departure time at the from_stop to the arrival time at the to_stop. Due to track circuit or other data issues, data is not guaranteed to be complete for any origin-destination pair or date.","","","CC0",,,"public","CC0-1.0","Massachusetts geoDOT","-73.591907,41.166258,-69.752209,42.956414",""
+"b3a24561c2104422a78b593e92b566d5","MBTAHUB_ADMIN","Fri, 15 May 2020 16:36:26 GMT","Tue, 09 Dec 2025 21:17:05 GMT","MBTA Bus, Commuter Rail, & Rapid Transit Reliability","Feature Service","For each route, day, and peak/offpeak time range, this file provides numerators separate from denominators, for flexibility in combining routes, peak/offpeak, before calculating reliability metrics. It is ONLY valid to aggregate numerator and denominator values within a single mode_type. If you attempt to aggregate Reliability performance between Bus and Commuter Rail, for example, you will NOT get meaningful results. For definitions of the metrics, see the MBTA Performance Dashboard (high-level definitions) and the MBTA Service Delivery Policy (detailed definitions). Due to track circuit or other data issues, data is not guaranteed to be complete for any stop or date. Note: - on peak_offpeak_ind: rows labeled PEAK will only appear for weekdays. - contracted bus routes (i.e 712/713) are not included. - for the Commuter Rail lines with branches, the reliability metric is included for each branch. Due to data collection issues, the following dates and/or lines are missing from this data set: Oct 10-11, 2015 June 1-3, 2018 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Performance,Commuter Rail,Bus,Rapid Transit,Reliability,2022,2023,2024","This file contains the reliability metric for rapid transit, bus, and commuter rail services for service dates between 2016 and the most recent completed month. The metric includes rail Passenger Wait Time and bus and commuter rail Headway.  
+
+IMPORTANT: The Rail reliability metric is under revision; current metric is available until May 2024. The data will be backfilled once the metric is revised.","","Massachusetts Bay Transportation Authority","CC0",,"https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_Rail_and_Bus_Reliability/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","-71.44352499999759,42.18607399999857,-70.7109569999976,42.457071999998554",""
+"f669fc7a9b1c49b292532b1b7b936e97","MBTAHUB_ADMIN","Mon, 20 Oct 2025 20:03:38 GMT","Tue, 21 Oct 2025 17:21:57 GMT","MBTA Service Delivery Policy Comfort Metric","CSV","Data Dictionary: Name Description Data Type Example Season Season and year of when passenger comfort was calculated String Fall 2019 sdp_mode Mode of service (either bus or heavy rail) String Bus route_id GTFS-compatible route String 10 day_type Day type of service (weekday, saturday, sunday). Holidays are excluded. String Weekday passenger_minutes_total The estimated number of total passenger minutes spent inside a vehicle for a given route Double 12946564.4 sdp_uncomfortable_minutes_total The estimated number of passenger minutes spent in crowded/uncomfortable conditions (defined by the SDP) inside a vehicle for a given route Double 1769978.838 crowding sdp_uncomfortable_minutes_total/passenger_minutes_total; time spent in uncomfortable conditons Double 0.14 comfort_measure 1 - crowding; time spent in comfortable conditions Double 0.86 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,SDP,Performance,2022,2023,2024","This dataset contains MBTA passenger comfort scores, as defined by the Service Delivery Policy, for each route and day type during each Fall rating going back to 2019 for Bus and to 2023 for Heavy Rail.","","","CC0","en-us",,"public","CC0-1.0","Massachusetts geoDOT","",""
+"ec170028b45e46cea43dd51bda250237","MBTAHUB_ADMIN","Tue, 15 Feb 2022 18:49:20 GMT","Thu, 16 Oct 2025 15:58:48 GMT","MBTA Extended Service Area","Feature Service","This file contains the 178 cities and towns in Massachusetts for which MBTA bus, rapid transit, or commuter rail service is provided. This data is based off of the 2010 census. The legislative intent for some boundaries could not be mapped. Boundaries where that is true are identified in the attribute information. Name Description Data Type Example town Full name for the MA town or city identification. String Boston town_id MassGIS Town-ID Code (alphabetical, 1-351) Numeric 34 sum_acres Area covered by the town or city in acres. Double 31304.22 sum_square Area covered by the town or city in square miles. Double 48.91 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Service Area,System Data","This file contains the 178 cities and towns in Massachusetts for which MBTA bus, rapid transit, or commuter rail service is provided. This data is based off of the 2010 census. The legislative intent for some boundaries could not be mapped. Boundaries where that is true are identified in the attribute information.","","Massachusetts Bay Transportation Authority","CC0","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_Extended_Service_Area/FeatureServer","public","CC0-1.0","MassGIS","-71.99378673732518,41.591351419313774,-70.51941215009985,42.88677825523167",""
+"5f71a5c035fc4a4dad1b7fa73ba27ef8","MBTAHUB_ADMIN","Fri, 07 Feb 2025 19:36:34 GMT","Mon, 29 Sep 2025 22:13:15 GMT","MBTA Rapid Transit Travel Times 2025","CSV Collection","This file contains the travel times
+between origin and destination pairs on a single line.
+
+It includes
+all heavy rail and light rail rapid transit lines. These travel times are
+calculated from the departure time at the from_stop to the arrival time
+at the to_stop. Due to track circuit or other data issues, data is not
+guaranteed to be complete for any origin-destination pair or date.
+
+Data Dictionary
+
+Each
+row represents a unique service_date-trip_id-from_stop_id-to_stop_id
+unit for rail service.
+
+field name
+
+type
+
+description
+
+source
+
+example
+
+service_date
+
+date
+
+equivalent
+to GTFS-RT start_date value in Trip Descriptor as date instead
+of string
+
+GTFS-RT
+
+2024-01-01
+
+route_id
+
+string
+
+equivalent
+to GTFS-RT route_id value in Trip Descriptor
+
+GTFS-RT
+
+Orange
+
+trip_id
+
+string
+
+equivalent
+to GTFS-RT trip_id value in Trip Descriptor
+
+GTFS-RT
+
+62248746
+
+direction_id
+
+int
+
+equivalent
+to GTFS-RT direction_id value in Trip Descriptor
+
+GTFS-RT
+
+0
+
+direction
+
+string
+
+equivalent
+to GTFS direction value from directions.txt for route_id-direction_id pair
+
+GTFS
+
+East
+
+from_parent_station
+
+string
+
+stop_name of the parent_station associated with the stop_id from stops.txt for origin
+stop.
+
+GTFS
+
+place-amory
+
+from_stop_id
+
+string
+
+equivalent
+to GTFS-RT stop_id value in VehiclePosition
+for origin stop.
+
+GTFS-RT
+
+170141
+
+from_stop_name
+
+string
+
+equivalent to GTFS stop_name from stops.txt for destination
+stop_id.
+
+GTFS
+
+Amory Street
+
+to_parent_station
+
+string
+
+stop_name of the parent_station associated with the stop_id from stops.txt for destination stop.
+
+GTFS
+
+place-babck
+
+to_stop_id
+
+string
+
+equivalent
+to GTFS-RT stop_id value in VehiclePosition for
+destination stop.
+
+GTFS-RT
+
+70560
+
+to_stop_name
+
+string
+
+equivalent
+to GTFS stop_name from stops.txt for origin
+stop_id.
+
+GTFS
+
+Babcock
+Street
+
+from_stop_departure_datetime
+
+datetime
+
+earliest ""IN_TRANSIT_TO"" OR
+""INCOMING_AT"" status timestamp from origin stop (previous stop) from GTFS-RT VehiclePosition as an Eastern datetime.
+
+GTFS-RT
+
+11/1/2023 5:24:51 AM
+
+from_stop_departure_sec
+
+int
+
+from_stop_departure_datetime as
+seconds after midnight
+
+LAMP
+Calculated
+
+84912
+
+to_stop_arrival_datetime
+
+datetime
+
+earliest
+""STOPPED_AT"" status timestamp for destination stop from
+GTFS-RT VehiclePosition or
+last arrival timestamp from GTFS-RT StopTimeUpdate if
+VehiclePosition value is not available as an Eastern datetime.
+
+GTFS-RT
+
+11/1/2023 5:25:34 AM
+
+to_stop_arrival_sec
+
+int
+
+to_stop_arrival_datetime as
+seconds after midnight
+
+LAMP
+Calculated
+
+84992
+
+travel_time_sec
+
+int
+
+seconds
+the vehicle spent traveling between origin stop and
+destination stop on trip.
+
+Calculated
+for Open Data Portal
+
+80
+
+Changes to the data
+
+Rapid Transit Travel Time data is now sourced from Lightweight
+Application for Measuring Performance (LAMP). To learn more about
+LAMP, please visit LAMP website.
+
+The data changed as follows:
+
+Trip_id field
+is added.
+
+Direction field is
+added.
+
+From_parent_station field
+is added.
+
+From_stop_name field
+is added.
+
+To_parent_station field
+is added.
+
+To_stop_name field
+is added.
+
+From_stop_departure_datetime field
+is added.
+
+To_stop_arrival_datetime field
+is added.
+
+Start_time_sec is now from_stop_departure_sec.
+
+End_time_sec is now to_stop_arrival_sec.
+
+MassDOT/MBTA shall not be held liable for any errors in this
+data. This includes errors of omission, commission, errors concerning the
+content of the data, and relative and positional accuracy of the data. This
+data cannot be construed to be a legal document. Primary sources from which
+this data was compiled must be consulted for verification of information
+contained in this data.","Rapid Transit,System Data,Travel Times,Vehicle Location Data,2025","This file contains the travel times between origin and destination pairs on a single line.
+
+It includes all heavy rail and light rail rapid transit lines. These travel times are calculated from the departure time at the from_stop to the arrival time at the to_stop. Due to track circuit or other data issues, data is not guaranteed to be complete for any origin-destination pair or date.","","","CC0",,,"public","CC0-1.0","Massachusetts geoDOT","0,0,0,0",""
+"e93e4e4820ca4719b3c4134ae0865053","MBTAHUB_ADMIN","Thu, 18 Apr 2024 01:47:01 GMT","Thu, 25 Sep 2025 15:47:52 GMT","MBTA The RIDE Ridership","Feature Service","The data is available from February 2017 and up to the most recent month for the current year. Data is not guaranteed to be complete for any date. Data Dictionary: Name Description Data Type Example Date Date for which service was provided. Date 2/1/2020 Completed Trips Number of completed trips on The RIDE. Integer 2317 Important: Due to the nature of paratransit and the need to go through an application process, we equate one trip with one registered passenger. That registered passenger may bring other people with them on the trip, which will increase the total number of people transported, but we still count that as one completed trip/one registered passenger trip. MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,The RIDE,Ridership,2022,2023,2024,2025","The RIDE is the MBTA's on-demand door-to-door paratransit service, operated by the MBTA in compliance with the Americans with Disabilities Act (ADA). This file contains the aggregated count of completed trips for the RIDE paratransit service.","","Massachusetts Bay Transportation Authority","CC0","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_The_RIDE_Ridership/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","",""
+"031c3392b4fd46baad54fcceb9fb4254","MBTAHUB_ADMIN","Thu, 18 Sep 2025 19:08:24 GMT","Fri, 19 Sep 2025 14:38:45 GMT","MBTA Heavy Rail Excess Trip Time","CSV","Definition of terms: Trip time: the sum of wait time and travel time Data Dictionary: Field Name Field Type Field Definition svc_date date The service date, defined as 3 AM-2:59 AM the following day. day character varying Day type, one of Weekday, Saturday, Sunday, Holiday halfhour character varying The service time, by half hour blocks. peak character varying The simplified service period as defined in the SDP. One of AM PEAK, PM PEAK, or OFF-PEAK. route_id character varying The route ID, one of Blue, Orange, Red. In the future, will include Green. dir_id character The direction of travel. est_pax real The estimated number of passengers by the above groupings. weighted_bl_trip_time real Minutes. Total estimated minutes of baseline trip time. Can be divided by est_pax to get baseline trip time per passenger. weighted_bl_wait_time real Minutes. Total estimated minutes of baseline wait time. Can be divided by est_pax to get baseline wait time per passenger. weighted_bl_travel_time real Minutes. Total estimated minutes of baseline travel time. Can be divided by est_pax to get baseline travel time per passenger. weighted_trip_time real Minutes. Total estimated minutes of actual trip time. Can be divided by est_pax to get actual trip time per passenger. weighted_wait_time real Minutes. Total estimated minutes of actual wait time. Can be divided by est_pax to get actual wait time per passenger. weighted_travel_time real Minutes. Total estimated minutes of actual travel time. Can be divided by est_pax to get actual travel time per passenger. five_min_thresh real The number of passengers in this grouping who arrived at their destination within 5 minutes of the baseline. Can be divided by est_pax to get a percentage of passenger trips that meet the threshold. twenty_min_thresh real The number of passengers in this grouping who arrived at their destination within 20 minutes of the baseline. Can be divided by est_pax to get a percentage of passenger trips that meet the threshold. twenty_pct_thresh real The number of passengers in this grouping who arrived at their destination within 20% excess of the baseline. Can be divided by est_pax to get a percentage of passenger trips that meet the threshold. thirty_pct_thresh real The number of passengers in this grouping who arrived at their destination within 30% excess of the baseline. Can be divided by est_pax to get a percentage of passenger trips that meet the threshold.","MBTA,Performance","This dataset provides line-level estimates of passenger volumes along with actual wait times and travel times compared to a calculated baseline. It also reports how many estimated passenger trips met defined service thresholds. The data can be aggregated for broader analysis of service performance and passenger experience.","","Massachusetts Bay Transportation Agency","CC0","en-us",,"public","CC0-1.0","MBTA","",""
+"cb4f4fb3cdf443e7a9d66c87ab1f5e17","MBTAHUB_ADMIN","Wed, 12 Feb 2020 20:24:20 GMT","Tue, 05 Aug 2025 19:09:29 GMT","MBTA The RIDE Reliability","Feature Service","The RIDE Reliability data contains daily information on all completed trips and trips completed on-time, starting from Fall 2014. The data are updated monthly.","MBTA,The RIDE,Performance","The RIDE Reliability","","Massachusetts Bay Transportation Authority","CC0","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_The_RIDE_Reliabilit/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"9e8089a985f24bc6a1dbae1e69703808","MBTAHUB_ADMIN","Mon, 07 Apr 2025 19:07:25 GMT","Wed, 25 Jun 2025 18:15:14 GMT","MBTA Commuter Rail Ridership by Trip, Season, Route Line, and Stop.","Feature Service","Data Dictionary: Name Description Data Type Example season Season and year for which ridership should be returned. String Spring 2018 route_id GTFS-compatible route for which ridership should be returned. String CR-Fitchburg route_name Description of route. String Fitchburg Line train GTFS-compatible train number. String 404 direction_id GTFS-compatible direction for which ridership should be returned. A 0 indicates ""outbound"" and 1 indicates ""inbound."" Integer 0 day_type_id Shorthand for day identifier. String day_type_01 day_type_name Text description of the id. Weekday, Saturday, or Sunday. Only weekdays are included in this dataset. String weekday stop_time Time at which the vehicle arrived at the stop. Represented in 24-hour time. String 5:15:00 stop_id GTFS-compatible stop ID for which ridership should be returned. String Porter Square stop_sequence The ordinal identifier of the stop on the particular trip. Integer 9 average_ons The count of passengers getting on vehicles on a typical weekday. Integer 22 average_offs The count of passengers getting off vehicles on a typical weekday. Integer 65 average_load The average number of passengers on the vehicle upon leaving a stop. Integer 170 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Commuter Rail,Ridership,2024","This file contains detailed boarding, alighting, and load data for commuter rail. It contains the averages per trip, season, route/line, direction, stop, day type, and time period. Data is available for weekdays in Spring 2012, Spring 2018, and Fall 2024.","","Office of Performance Management and Innovation.","CC0","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_Commuter_Rail_Ridership_by_Trip_Season_RouteLine_and_Stop/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","0,0,0,0",""
+"84c9d171d32945f594fbb4d889153c44","MBTAHUB_ADMIN","Mon, 10 Feb 2025 16:00:29 GMT","Tue, 13 May 2025 15:12:24 GMT","MBTA Rapid Transit Headways 2025","CSV Collection","This file contains the headways, or time between the
+departure time of the current trip and the departure time of the previous trip
+from the same stop, for rapid transit vehicles. It
+includes all heavy rail and light rail rapid transit lines. For Red and
+Green lines, both trunk (e.g. all Green line trains) and branch
+(e.g. Green-B trains) headways are included. For lines without branches (e.g.
+Blue line), branch route ID and branch headway will be NULL. Due to track circuit or other data issues, data is not
+guaranteed to be complete for any stop or date.
+
+Data Dictionary
+
+Each
+row represents a unique service_date-trip_id-stop_id pair
+for rail service.
+
+field name
+
+type
+
+description
+
+source
+
+example
+
+service_date
+
+date
+
+equivalent
+to GTFS-RT start_date value in Trip Descriptor as date instead
+of string
+
+GTFS-RT
+
+2024-01-01
+
+route_id
+
+string
+
+equivalent
+to GTFS-RT route_id value in Trip Descriptor
+
+GTFS-RT
+
+Orange
+
+trunk_route_id
+
+string
+
+line
+if multiple routes exist on line, otherwise route_id, e.g. Green for Green-B route, Blue for Blue route
+
+GTFS-RT
+
+Green
+
+branch_route_id
+
+string
+
+equivalent
+to GTFS-RT route_id value in Trip Descriptor for
+lines with multiple routes, NULL if line has single route,
+e.g. Green-B for Green-B route, NULL for Blue route_id.
+
+GTFS-RT
+
+Green-B
+
+trip_id
+
+string
+
+equivalent
+to GTFS-RT trip_id value in Trip Descriptor
+
+GTFS-RT
+
+62248746
+
+direction_id
+
+int
+
+equivalent
+to GTFS-RT direction_id value in Trip Descriptor
+
+GTFS-RT
+
+0
+
+direction
+
+string
+
+equivalent
+to GTFS direction value
+from directions.txt for route_id-direction_id pair
+
+GTFS
+
+East
+
+parent_station
+
+string
+
+the parent_station associated
+with the stop_id from stops.txt
+
+GTFS
+
+place-babck
+
+stop_id
+
+string
+
+equivalent
+to GTFS-RT stop_id value in VehiclePosition
+
+GTFS-RT
+
+70560
+
+stop_name
+
+string
+
+equivalent
+to GTFS stop_name from stops.txt for stop_id
+
+GTFS
+
+Babcock
+Street
+
+stop_departure_datetime
+
+datetime
+
+earliest ""IN_TRANSIT_TO"" OR
+""INCOMING_AT"" status timestamp for a trip-stop pair from GTFS-RT VehiclePosition as an Eastern datetime.
+
+GTFS-RT
+
+11/1/2023 5:24:51 AM
+
+stop_departure_sec
+
+int
+
+stop_departure_datetime as
+seconds after midnight
+
+LAMP
+Calculated
+
+20,517
+
+headway_branch_seconds
+
+int
+
+seconds
+between consecutive vehicles departing parent_station on branch_route_id
+
+LAMP
+Calculated
+
+1,387
+
+headway_trunk_seconds
+
+int
+
+seconds
+between consecutive vehicles departing parent_station on trunk_route_id
+
+LAMP
+Calculated
+
+311
+
+Changes to the data:
+
+Rapid Transit Events data is now sourced from Lightweight
+Application for Measuring Performance (LAMP). To learn more about
+LAMP, please visit LAMP Website.
+
+The data changed as follows:
+
+Trunk_route_id field
+is added.
+
+Branch_route_id field
+is added.
+
+Trip_id field
+is added.
+
+Direction field is
+added.
+
+Destination is now
+replaced conceptually by branch_route_id.
+
+Parent_station field
+is added.
+
+Stop_name field
+is added.
+
+Start_time_sec field
+is no longer included (if needed can be calculated as stop_departure_seconds
+- headway_*_seconds)
+
+Stop_departure_datetime field
+is added.
+
+End_time_sec is now stop_departure_sec.
+
+Headway_time_sec is changed
+from long to wide and is now headway_branch_seconds and headway_trunk_seconds.
+
+MassDOT/MBTA shall not be held liable for any errors in this
+data. This includes errors of omission, commission, errors concerning the
+content of the data, and relative and positional accuracy of the data. This
+data cannot be construed to be a legal document. Primary sources from which
+this data was compiled must be consulted for verification of information
+contained in this data.","Headway,MBTA,Rapid Transit,System Data,Vehicle Location Data,2025","","","","CC0","en-us",,"public","CC0-1.0","Office of Performance Management & Innovation","0,0,0,0",""
+"7da1f62034f64cb4bc9e2afefe9a1fdc","MBTAHUB_ADMIN","Thu, 08 May 2025 16:34:35 GMT","Thu, 08 May 2025 19:24:47 GMT","MBTA 2024 System-Wide Passenger Survey","Feature Service","For more information about the MBTA System-Wide Passenger Survey, please see the Rider Census website. Field Data Type Description aggregation_level String Level of aggregation. One of: Reporting Group, Rapid Transit or Bus Rapid Transit Line, Service Mode, or Systemwide. service_mode String MBTA service mode. One of: Bus (includes SL4/SL5), Commuter Rail, Ferry, Rapid Transit or Bus Rapid Transit - Blue Line, Rapid Transit or Bus Rapid Transit - Green Line, Rapid Transit or Bus Rapid Transit - Orange Line, Rapid Transit or Bus Rapid Transit - Red Line, Rapid Transit or Bus Rapid Transit - Mattapan Trolley, Rapid Transit or Bus Rapid Transit - Silver Line BRT (includes SL1/SL2/SL3). reporting_group String MBTA service reporting group. This field will be at different levels for different MBTA service modes. Generally speaking, heavy rail is summarized to the station or small group of geographically proximate stations, light rail is summarized to the branch, bus is summarized to the route or geographic group of routes, commuter rail is summarized to the line, and ferry is summarized to the mode. measure_group String Category of measure: e.g., Race and Ethnicity, Income. measure String Measure: e.g., Race, Hispanic or Latino, Title VI Minority. category String Specific category for which data is being provided. weighted_percent Numeric The proportion of riders answering a question in the given category. MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Rider Census,MBTA,Ridership,2024","This table contains the full MBTA 2024 System-Wide Passenger Survey dataset.","","This dataset was prepared by the MassDOT Office of Performance Management & Innovation.","CC0","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_2024_System_Wide_Passenger_Survey/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","0,0,0,0",""
+"05861f41d3c244f9b0e8b3a3358ed007","MBTAHUB_ADMIN","Wed, 10 Jun 2020 19:13:05 GMT","Wed, 16 Apr 2025 17:25:44 GMT","MBTA Service Delivery Policy Time Periods","Feature Service","Saturdays and Sundays are measured separately for most standards. A service day is defined as 3:00am - 2:59am (the next day). Please see Service Delivery Policy website for details. MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Reference Table,System Data,2022,2023","MBTA time periods according to the Service Delivery Policy.","","Massachusetts Bay Transportation Authority","CC0","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_Service_Delivery_Policy_Time_Periods/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"5355253d53864664a6e74142c594f16e","MBTAHUB_ADMIN","Fri, 02 Aug 2024 18:04:52 GMT","Thu, 10 Apr 2025 17:46:53 GMT","GTFS Post-Rating Recaps","CSV Collection","The MBTA GTFS Post-rating Recap collection contains text files that describe MBTA schedule which includes any planned changes in service that became known after the rating began (weekend shuttle buses, change to reduced service schedule due to a snow day, etc.) for a specific season. Data dictionary: https://github.com/mbta/gtfs-documentation/blob/master/reference/gtfs.md To view all previously published GTFS files, please refer to the link below: https://github.com/mbta/gtfs-documentation/blob/master/reference/gtfs-archive.md MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","GTFS,Map Service,MBTA,Reference Table,System Data,2024,2025","","","Massachusetts Bay Transportation Authority","CC0",,,"public","CC0-1.0","Massachusetts geoDOT","",""
+"d4610a65064a4d3c8536c75d520e0012","MBTAHUB_ADMIN","Fri, 04 Apr 2025 16:07:51 GMT","Mon, 07 Apr 2025 19:31:13 GMT","Fall 2024 MBTA Rail Ridership by SDP Time Period, Route/Line, and Stop","Feature Service","Due to planned diversions related to track work throughout
+the Fall 2024 rating, ridership was not included on days when a diversion
+impacted a particular line. For example, there were planned diversions on the Red
+Line from 9/6/2024 to 9/29/2024, so Red Line ridership data during that period
+is not included.
+
+For routes with multiple branches, for example the Red Line
+with Braintree and Ashmont branches, and the Green Line with the B, C, D, and E
+branches, ridership estimates are combined through the trunk. Data Dictionary
+
+Name
+
+Description
+
+Data Type
+
+Example
+
+mode
+
+Mode of
+transportation for which ridership should be returned.
+
+String
+
+Heavy Rail
+
+season
+
+Season and
+year for which ridership should be returned.
+
+String
+
+Fall 2024
+
+route_id
+
+Route for
+which ridership should be returned.
+
+String
+
+Red
+
+route_name
+
+Description
+of route.
+
+String
+
+Red Line
+
+direction_id
+
+Direction for
+which ridership should be returned: NB, SB, EB, or WB.
+
+String
+
+EB
+
+day_type_id
+
+Shorthand for
+day identifier.
+
+String
+
+day_type_01
+
+day_type_name
+
+Text
+description of the ID. Weekday, Saturday, or Sunday; holidays are excluded
+from the data.
+
+String
+
+Weekday
+
+time_period_id
+
+Shorthand for
+time period identifier, per our Service Delivery Policy.
+
+String
+
+time_period_03
+
+time_period_name
+
+Aggregated
+periods of varying length to represent different levels of service provided.
+
+String
+
+AM_PEAK
+
+stop_name
+
+GTFS-compatible
+stop name for which ridership should be returned.
+
+String
+
+Wollaston
+
+parent-station
+
+GTFS-compatible
+stop for which ridership should be returned.
+
+String
+
+place-wlsta
+
+total_ons
+
+The count of
+passengers boarding vehicles, summed by the aggregated fields.
+
+Integer
+
+1491
+
+total_offs
+
+The count of
+passengers alighting vehicles, summed by the aggregated fields.
+
+Integer
+
+7990
+
+number_service_days
+
+Number of
+non-holiday service days in the season based on day type.
+
+Integer
+
+19
+
+average_ons
+
+Represents
+the ons on a typical service day within the aggregated fields. Calculated by
+total_ons/number_service_days.
+
+Integer
+
+435
+
+average_offs
+
+Represents
+the offs on a typical service day within the aggregated fields. Calculated by
+total_offs/number_service_days.
+
+Integer
+
+65
+
+average_flow
+
+The total
+number of passengers traveling through the rail system between stations
+within the aggregated time period, averaged to represent the typical weekday,
+Saturday, or Sunday.
+
+Integer 21
+
+MassDOT/MBTA shall not be held liable for any errors in this
+data. This includes errors of omission, commission, errors concerning the
+content of the data, and relative and positional accuracy of the data. This
+data cannot be construed to be a legal document. Primary sources from which
+this data was compiled must be consulted for verification of information
+contained in this data.","Ridership,SDP,Rapid Transit,2024,MBTA","This file contains detailed ridership data for heavy rail and light rail during the Fall 2024 rating (August 25-December 14). It contains the average ridership for a typical day during the rating by route/line, direction, stop, day type, and SDP (Service Delivery Policy) time period.","","","","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/Fall_2024_MBTA_Rail_Ridership_by_SDP_Time_Period_Route_Line_and_Stop/FeatureServer","public",,"Massachusetts geoDOT","",""
+"8f20b4e8d24e466fbca157cca63f6e16","MBTAHUB_ADMIN","Fri, 04 Apr 2025 13:59:40 GMT","Fri, 04 Apr 2025 14:54:33 GMT","Fall 2024 MBTA Rail Ridership by Hour, Route/Line, and Stop","Feature Service","Due to planned diversions related to track work throughout the Fall 2024 rating, ridership was not included on days when a diversion impacted a particular line. For example, there were planned diversions on the Red Line from 9/6/2024 to 9/29/2024, so Red Line ridership data during that period is not included. For routes with multiple branches, for example the Red Line with Braintree and Ashmont branches, and the Green Line with the B, C, D, and E branches, ridership estimates are combined through the trunk. Data Dictionary Name Description Data Type Example mode Mode of transportation for which ridership should be returned. String Heavy Rail season Season and year for which ridership should be returned. String Fall 2024 route_id Route for which ridership should be returned. String Red route_name Description of route. String Red Line dir_id Direction for which ridership should be returned: NB, SB, EB, or WB. String EB day_type_id Shorthand for day identifier. String day_type_01 day_type_name Text description of the ID. Weekday, Saturday, or Sunday; holidays are excluded from the data. String Weekday stop_name GTFS-compatible stop name for which ridership should be returned. String Wollaston parent_station GTFS-compatible stop for which ridership should be returned. String place-wlsta total_ons The count of passengers boarding vehicles, summed by the aggregated hour. Integer 1491 total_offs The count of passengers alighting vehicles, summed by the aggregated hour. Integer 7990 number_service_days Number of non-holiday service days in the season based on day type. Integer 19 hour_of_service The hour of service for the corresponding ridership. For example, “06:00:00” corresponds to ridership in the hour that starts at 6:00am, and “14:00:00” corresponds to ridership in the hour starting at 14:00, or 2:00pm. String 06:00:00 average_ons Represents the ons on a typical service day within the aggregated hour. Calculated by total_ons/number_service_days. Integer 435 average_offs Represents the offs on a typical service day within the aggregated hour. Calculated by total_offs/number_service_days. Integer 65 average_flow The total number of passengers traveling through the rail system between stations within the aggregated hour, averaged to represent the typical weekday, Saturday, or Sunday. Integer 21 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Ridership,2024,MBTA,Rapid Transit","This file contains detailed ridership data for heavy rail and light rail during the Fall 2024 rating (August 25-December 14). It contains the average ridership for a typical day during the rating by route/line, direction, stop, day type, and hour.","","","","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/Fall_2024_MBTA_Rail_Ridership_by_Hour_Route_Line_and_Stop/FeatureServer","public",,"Massachusetts geoDOT","0,0,0,0",""
+"9ab1dc7ea2bf4ad7b7e25cc6b941b39a","MBTAHUB_ADMIN","Tue, 19 Mar 2024 19:33:46 GMT","Thu, 03 Apr 2025 15:57:31 GMT","GTFS Pre-Rating Recaps","CSV Collection","The MBTA GTFS Pre-rating Recap collection contains text files that describe a generalized MBTA schedule for a specific season. While the MBTA posts all previously published GTFS files, this collection makes it easier to find the schedule that the MBTA ran for the majority of a season instead of having to identify the ""correct"" one from the GTFS archive. We recommend using these files instead of the current GTFS when doing historical analyses. Data dictionary: https://github.com/mbta/gtfs-documentation/blob/master/reference/gtfs.md To view all previously published GTFS files, please refer to the link below: https://github.com/mbta/gtfs-documentation/blob/master/reference/gtfs-archive.md MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","GTFS,System Data,2022,2023,2024,2025","The MBTA GTFS Pre-rating Recap collection contains text files that describe a generalized MBTA schedule for a specific season. The collection contains fall pre-rating recap from 2018 to 2024 and for other seasons 2021-2024. ","","","",,,"public",,"Massachusetts geoDOT","",""
+"e4f8c20da4004a64a811ba0092ec28bc","MBTAHUB_ADMIN","Thu, 11 Jun 2020 19:22:41 GMT","Mon, 24 Mar 2025 15:17:36 GMT","MBTA Ratings & Seasons","Feature Service","null","MBTA,Service Data,Reference Table,Ratings,System Data,2022,2023,2024,2025","Updated up to most recent season. Use to aggregate dates to the official ratings, or seasons, designated by the MBTA.","","Massachusetts Bay Transportation Authority","CC0","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_Ratings/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"7acd353c1a734eb8a23caf46a0e66b23","MBTAHUB_ADMIN","Thu, 20 Mar 2025 16:58:35 GMT","Thu, 20 Mar 2025 17:27:26 GMT","MBTA Bus Ridership by Time Period, Season, Route/Line, and Stop - Fall","Feature Service","MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Bus,Ridership,MBTA,2024,2023,2022","This file contains detailed ridership data for bus and Silver Line. It contains the average ridership and load for a typical day during the rating by route/line, direction, stop, day type, and time period.","","","CC0",,"https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/Bus_Load_File_Fall/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","0,0,0,0",""
+"8daf4a33925a4df59183f860826d29ee","MBTAHUB_ADMIN","Wed, 19 Mar 2025 15:04:08 GMT","Wed, 19 Mar 2025 15:29:36 GMT","MBTA Bus Ridership by Trip, Season, Route, Line, and Stop","CSV Collection","This file contains detailed boarding, alighting, and load data for bus. It contains the averages per trip, season, route/line, direction, stop, day type, and time period. Data is available for Fall seasons from 2016 through 2023. Data Dictionary: Name Description Data Type Example season Season and year for which ridership should be returned. String Fall 2017 route_id GTFS-compatible route for which ridership should be returned. String 34E route_variant GTFS compatible route pattern id that identifies the variation from the typical trip taken by the vehicle. Indicates the route, variant number, and direction of trip. String 34E-6-1 direction_id GTFS-compatible direction for which ridership should be returned. Integer 0 trip_start_time 24-hour time at which the one-way trip began. Trips starting after 11:59 PM are represented as 24:00 plus their 24-hour time. For example, a trip starting at 1:30 AM will be 25:30:00. Time 05:15:00 day_type_id Shorthand for day identifier. String day_type_01 day_type_name Text description of the id. Weekday, Saturday, or Sunday; holidays are excluded from the data. String Weekday stop_name GTFS-compatible stop name for which ridership should be returned. String WASHINGTON ST OPP RUGGLES ST stop_id GTFS-compatible stop for which ridership should be returned. String 1 stop_sequence The ordinal identifier of the stop on the particular trip. Integer 9 average_boardings The average count of passengers getting on vehicles. Double 435.6 average_alightings The average count of passengers leaving vehicles. Double 65.4 average_load The average number of passengers on the vehicle upon leaving a stop, summed by the aggregated fields; represented as cumulative average load out. Double 17.8 sample_size The number of trips scheduled at the start time used to calculate the average boardings, alightings, and loads. Integer 18 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Ridership,Bus,2022","This file contains detailed boarding, alighting, and load data for bus. It contains the averages per trip, season, route/line, direction, stop, day type, and time period.","","Massachusetts Bay Transportation Authority","CC0","en-us",,"public","CC0-1.0","Office of Performance Management & Innovation","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"adbe3a94edcd44259cfee2621ed9f3a7","MBTAHUB_ADMIN","Tue, 28 Jun 2022 17:51:04 GMT","Fri, 14 Mar 2025 19:49:20 GMT","MBTA Bus Ridership by Time Period Season Route/Line and Stop - Spring 2020, 2021","Feature Service","Please note that some route – time period combinations have
+incomplete or missing data due to insufficient sampling during the given season.
+If some of the trips for a particular route and time period were unsampled, the
+num_trips_for_calculation and num_trips_total will be different. Some routes
+were completely unsampled during certain time periods; these contain “NULL”
+values in the fields average_ons, average_offs, and average_load. The majority
+of the missing data is from Saturday or Sunday. These missing route – time period combinations mean that the
+total system ridership cannot be calculated using this data set. Weekday
+ridership for an individual route and a given rating can be calculated as long
+as it is not one of the routes listed below for that rating. Routes with missing weekday trips: Early Spring 2020: 74, 75 Late Spring 2020: 74, 75 Spring 2021: 71, 73 Data Dictionary:
+Name
+Description
+Data Type
+Example
+
+mode
+GTFS-compatible mode of
+transportation for which ridership should be returned.
+Integer
+3
+
+season
+Season and year for which
+ridership should be returned.
+String
+Fall 2017
+
+route_id
+GTFS-compatible route for which
+ridership should be returned.
+String
+57A
+
+route_name
+Description of route.
+String
+57A
+
+route_variant
+GTFS compatible route pattern id
+that identifies the variation from the typical trip taken by the vehicle.
+Indicates the route, variant number, and direction of trip.
+String
+34E-6-1
+
+stop_sequence
+GTFS-compatible order of stops
+within a trip.
+Integer
+8
+
+direction_id
+GTFS-compatible direction for
+which ridership should be returned.
+Integer
+0
+
+day_type_id
+Shorthand for day identifier.
+String
+day_type_01
+
+day_type_name
+Text description of the id.
+Weekday, Saturday, or Sunday; holidays are excluded from the data.
+String
+Weekday
+
+time_period_id
+Shorthand for time period
+identifier, per our Service Delivery Policy. Groupings use the trip start
+times.
+String
+time_period_03
+
+time_period_name
+Aggregated periods of varying
+lengths to represent different levels of service provided. Groupings use the
+trip start times.
+String
+AM_RUSH
+
+stop_name
+GTFS-compatible stop name for
+which ridership should be returned.
+String
+LAGRANGE ST @ PENDER ST
+
+stop_id
+GTFS-compatible stop for which
+ridership should be returned.
+String
+840
+
+average_ons
+The average count of passengers
+boarding vehicles per trip for trips beginning within the specified time
+period.
+Double
+435.6
+
+average_offs
+The average count of passengers
+alighting vehicles per trip for trips beginning within the specified time
+period.
+Double
+65.4
+
+average_load
+The average number of passengers
+on the vehicle upon leaving a stop per trip for trips beginning within the
+specified time period.
+Double
+17.8
+
+num_trips_for_calculation
+The number of trips of that
+route and variant that were sampled within the specified time period. Used to
+calculate the average ons, offs, and load.
+Integer
+4
+
+num_trips_total
+The number of trips of that
+route and variant that are scheduled to run within the specified time period.
+Integer
+5
+MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Bus,Ridership,MBTA","This file contains detailed ridership data for bus and Silver Line. It contains the average ridership and load for a typical day during the rating by route/line, direction, stop, day type, and time period. Data is available for Early Spring 2020 (03/21/2020 – 05/03/2020), Late Spring 2020 (05/04/2020 – 06/20/2020), and Spring 2021. Early Spring 2020 and Late Spring 2020 are separated due to rapidly changing ridership and schedules.","","","CC0",,"https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_Bus_Ridership_by_Time_Period_Season_RouteLine_and_Stop_Spring/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","",""
+"ccb2941254944803bbd4e2df58e09906","MBTAHUB_ADMIN","Fri, 31 May 2024 19:25:12 GMT","Mon, 10 Feb 2025 19:05:45 GMT","MBTA Rapid Transit Headways 2024","CSV Collection","This file contains the headways, or time between the
+departure time of the current trip and the departure time of the previous trip
+from the same stop, for rapid transit vehicles. It
+includes all heavy rail and light rail rapid transit lines. For Red and
+Green lines, both trunk (e.g. all Green line trains) and branch
+(e.g. Green-B trains) headways are included. For lines without branches (e.g.
+Blue line), branch route ID and branch headway will be NULL. Due to track circuit or other data issues, data is not
+guaranteed to be complete for any stop or date.
+
+Data Dictionary
+
+Each
+row represents a unique service_date-trip_id-stop_id pair
+for rail service.
+
+field name
+
+type
+
+description
+
+source
+
+example
+
+service_date
+
+date
+
+equivalent
+to GTFS-RT start_date value in Trip Descriptor as date instead
+of string
+
+GTFS-RT
+
+2024-01-01
+
+route_id
+
+string
+
+equivalent
+to GTFS-RT route_id value in Trip Descriptor
+
+GTFS-RT
+
+Orange
+
+trunk_route_id
+
+string
+
+line
+if multiple routes exist on line, otherwise route_id, e.g. Green for Green-B route, Blue for Blue route
+
+GTFS-RT
+
+Green
+
+branch_route_id
+
+string
+
+equivalent
+to GTFS-RT route_id value in Trip Descriptor for
+lines with multiple routes, NULL if line has single route,
+e.g. Green-B for Green-B route, NULL for Blue route_id.
+
+GTFS-RT
+
+Green-B
+
+trip_id
+
+string
+
+equivalent
+to GTFS-RT trip_id value in Trip Descriptor
+
+GTFS-RT
+
+62248746
+
+direction_id
+
+int
+
+equivalent
+to GTFS-RT direction_id value in Trip Descriptor
+
+GTFS-RT
+
+0
+
+direction
+
+string
+
+equivalent
+to GTFS direction value
+from directions.txt for route_id-direction_id pair
+
+GTFS
+
+East
+
+parent_station
+
+string
+
+the parent_station associated
+with the stop_id from stops.txt
+
+GTFS
+
+place-babck
+
+stop_id
+
+string
+
+equivalent
+to GTFS-RT stop_id value in VehiclePosition
+
+GTFS-RT
+
+70560
+
+stop_name
+
+string
+
+equivalent
+to GTFS stop_name from stops.txt for stop_id
+
+GTFS
+
+Babcock
+Street
+
+stop_departure_datetime
+
+datetime
+
+earliest ""IN_TRANSIT_TO"" OR
+""INCOMING_AT"" status timestamp for a trip-stop pair from GTFS-RT VehiclePosition as an Eastern datetime.
+
+GTFS-RT
+
+11/1/2023 5:24:51 AM
+
+stop_departure_sec
+
+int
+
+stop_departure_datetime as
+seconds after midnight
+
+LAMP
+Calculated
+
+20,517
+
+headway_branch_seconds
+
+int
+
+seconds
+between consecutive vehicles departing parent_station on branch_route_id
+
+LAMP
+Calculated
+
+1,387
+
+headway_trunk_seconds
+
+int
+
+seconds
+between consecutive vehicles departing parent_station on trunk_route_id
+
+LAMP
+Calculated
+
+311
+
+Changes to the data:
+
+Rapid Transit Events data is now sourced from Lightweight
+Application for Measuring Performance (LAMP). To learn more about
+LAMP, please visit LAMP Website.
+
+The data changed as follows:
+
+Trunk_route_id field
+is added.
+
+Branch_route_id field
+is added.
+
+Trip_id field
+is added.
+
+Direction field is
+added.
+
+Destination is now
+replaced conceptually by branch_route_id.
+
+Parent_station field
+is added.
+
+Stop_name field
+is added.
+
+Start_time_sec field
+is no longer included (if needed can be calculated as stop_departure_seconds
+- headway_*_seconds)
+
+Stop_departure_datetime field
+is added.
+
+End_time_sec is now stop_departure_sec.
+
+Headway_time_sec is changed
+from long to wide and is now headway_branch_seconds and headway_trunk_seconds.
+
+MassDOT/MBTA shall not be held liable for any errors in this
+data. This includes errors of omission, commission, errors concerning the
+content of the data, and relative and positional accuracy of the data. This
+data cannot be construed to be a legal document. Primary sources from which
+this data was compiled must be consulted for verification of information
+contained in this data.","MBTA,System Data,Headway,Vehicle Location Data,Rapid Transit,2024","","","","CC0","en-us",,"public","CC0-1.0","Massachusetts geoDOT","",""
+"a2d15ddd86b34867a31cd4b8e0a83932","MBTAHUB_ADMIN","Wed, 14 Feb 2024 17:06:57 GMT","Mon, 20 Jan 2025 14:17:01 GMT","MBTA Monthly Ridership By Mode (archive)","Feature Service","This file contains the total and average daily ridership per month by day type (e.g. weekday) and mode (Bus, Rapid Transit, Commuter Rail, and Ferry) and line (for Rapid Transit and Ferry). The data is available from Jan 2016 to Jun 2018.","MBTA,Ridership,Bus,Commuter Rail,Ferry,Rapid Transit,2022,2023,2024,2025","For recent data, please visit https://mbta-massdot.opendata.arcgis.com/datasets/2048258a18354256a650d41f8fe4532c_0/explore
+","","","CC0","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_Monthly_Ridership_By_Mode/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","",""
+"05480840f68d4b1e97027b5e4a9b8144","HughesC_Pla","Tue, 17 Sep 2019 19:33:37 GMT","Fri, 17 Jan 2025 18:59:33 GMT","GTFS GDB","Document Link","ZIP file containing the GTFS FGDB","Mbta,Gtfs","","","","","en-us","https://gisdev.massdot.state.ma.us/data/gtfs.gdb.zip","public",,"Massachusetts geoDOT","",""
+"a5a1e75b2f194465890151ee9c3a1d97","MBTAHUB_ADMIN","Fri, 29 Oct 2021 20:39:47 GMT","Fri, 17 Jan 2025 18:59:10 GMT","MBTA Systemwide GTFS Map","Map Service","This map service contains layers from the stops, shapes, and facilities files from the MBTA GTFS. MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Mbta,Gtfs","This map service contains layers from the stops, shapes, and facilities files from the MBTA GTFS.","","","CC0","en-us","https://gis.massdot.state.ma.us/arcgis/rest/services/Multimodal/GTFS_Systemwide/MapServer","public","CC0-1.0","Massachusetts geoDOT","-71.85,41.5735,-70.2351,42.7999",""
+"9fea7862501f4c59ab2c001ad6ae19b0","MBTAHUB_ADMIN","Fri, 13 Mar 2020 18:18:02 GMT","Fri, 17 Jan 2025 14:44:20 GMT","MBTA Rail Ridership by Time Period, Season, Route/Line, and Stop","Feature Service","This file contains detailed ridership and flow data for heavy rail and light rail. It contains the average ridership per season, route/line, direction, stop, day type, and time period. Data is available for Fall 2017, Fall 2018, and Fall 2019. Due to track circuit issues, the Fall 2018 season for heavy and light rail only includes the month of September. Due to track servicing and shuttling, weekend volume for the Orange line between Forest Hills and Ruggles is underestimated during the Fall 2018 season. Due to construction, volume for the Red line at Wollaston is underestimated during the Fall 2018 season. Data Dictionary:
+
+Name
+Description
+Data Type
+Example
+
+mode
+GTFS-compatible mode of transportation for which ridership should be returned.
+Integer
+1
+
+season
+Season and year for which ridership should be returned.
+String
+Fall 2017
+
+route_id
+Route for which ridership should be returned.
+String
+Red
+
+route_name
+Description of route.
+String
+Red Line
+
+direction_id
+GTFS-compatible direction for which ridership should be returned.
+Integer
+0
+
+day_type_id
+Shorthand for day identifier.
+String
+day_type_01
+
+day_type_name
+Text description of the id. Weekday, Saturday, or Sunday; holidays are excluded from the data.
+String
+Weekday
+
+time_period_id
+Shorthand for time period identifier, per our Service Delivery Policy.
+String
+time_period_03
+
+time_period_name
+Aggregated periods of varying lengths to represent different levels of service provided.
+String
+AM_RUSH
+
+stop_name
+GTFS-compatible stop name for which ridership should be returned.
+String
+Wollaston
+
+parent_station
+GTFS-compatible stop for which ridership should be returned.
+String
+place-wlsta
+
+total_ons
+The count of passengers boarding vehicles, summed by the aggregated fields.
+Integer
+1491
+
+total_offs
+The count of passengers alighting vehicles, summed by the aggregated fields.
+
+Integer
+7990
+
+number_service_days
+Number of non-holiday service days in the season based on day type.
+Integer
+19
+
+average_ons
+Represents the ons on a typical service day within the aggregated fields. Calculated by total_ons/number_service_days.
+
+Double
+435.6
+
+average_offs
+Represents the offs on a typical service day within the aggregated fields. Calculated by total_offs/number_service_days.
+Double
+65.4
+
+average_flow
+The total number of passengers traveling through the rail system between stations within the aggregated time period, averaged to represent the typical weekday, saturday, or sunday.
+Integer
+21
+
+MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Ridership,Rapid Transit","This file contains detailed ridership data for heavy rail and light rail. It contains the average ridership for a typical day during the rating by route/line, direction, stop, day type, and time period.","","Massachusetts Bay Transportation Authority","CC0","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/Rail_Ridership_by_Season_Time_Period_RouteLine_and_Stop/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"4c1293151c6c4a069d49e6b85ee68ea4","MBTAHUB_ADMIN","Wed, 22 Apr 2020 19:26:59 GMT","Fri, 17 Jan 2025 14:33:57 GMT","MBTA Bus Arrival Departure Times 2020","CSV Collection","This file contains the arrival and departure events for buses between January and December 2020. Due to data collection issues, data is not guaranteed to be complete for any stop or date. Data Dictionary:
+
+Name
+Description
+Data Type
+Example
+
+service_date
+Date on which the trip took place. Service dates run from around 2:00AM - 1:59:59AM
+Date
+2019-12-31
+
+route_id
+Route Id
+String
+01
+
+direction_id
+Identifies whether the trip is traveling inbound or outbound
+String
+Inbound
+
+half_trip_id
+Identification for the one way trip
+Integer
+40836717
+
+stop_id
+GTFS-compatible stop
+Integer
+75
+
+time_point_id
+The code for the timepoint
+String
+mit
+
+time_point_order
+The order of this timepoint in the trip
+Integer
+4
+
+point_type
+Identifies whether the stop is the starting point, midpoint, or endpoint for the trip
+String
+Midpoint
+
+standard_type
+Identifies whether the trip should be evaluated on the scheudle standard or headway standard.
+String
+Headway
+
+scheduled
+The time the trip was scheduled to depart the stop. The scheduled time should not be used to evaluated reliability if this trip is evaluated on the headway standard. Only the headway and run time should be used per the Service Delivery Policy.
+Time
+12:30 AM
+
+actual
+The time the trip actually departed the timepoint.
+Time
+12:29 AM
+
+scheduled_headway
+The scheduled time between the trip and the previous trip at the stop, in seconds. NULL if this trip is evaluated on the schedule standard.
+
+Integer
+1200
+
+headway
+The actual time between the trip and the previous trip at the stop, in seconds. NULL if this trip is evaluated on the schedule standard or if this is the last stop on the trip (endpoint). Endpoints are evaluated by whether the trip runtime is within 120% of the scheduled run time.
+
+Integer
+1163
+
+MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Bus,System Data,Headway,Vehicle Location Data","","","Massachusetts Bay Transportation Authority","CC0",,,"public","CC0-1.0","Office of Performance Management & Innovation","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"eda80a5e178e47e9bba6bdb72589d9d9","MBTAHUB_ADMIN","Tue, 21 Apr 2020 20:03:57 GMT","Fri, 17 Jan 2025 14:33:03 GMT","MBTA Rapid Transit Travel Times 2020","CSV Collection","It includes all heavy rail and light rail rapid transit lines. These travel times are calculated from the departure time at the origin stop to the arrival time at the destination stop. Due to track circuit or other data issues, data is not guaranteed to be complete for any origin-destination pair or date. Data Dictionary: Name Description Data Type Example service_date Date for which travel times should be returned. Date 43830 route_id GTFS-compatible route for which travel times should be returned. String Orange direction_id GTFS-compatible direction for which travel times should be returned. Integer 0 from_stop_id GTFS-compatible stop representing the origin stop in a pair. String 70205 to_stop_id GTFS-compatible stop representing the destination stop in a pair. String 70154 start_time_sec Property of “Travel Times”. Expressed in ""seconds after midnight."" The time associated with the departure event of the vehicle from the origin stop of the pair. Integer 45763 end_time_sec Property of “Travel Times”. Expressed in ""seconds after midnight."" The time associated with the arrival event of the vehicle to the destination stop of the pair. Integer 46411 travel_time_sec Property of “Travel Times”. Difference between start_time_sec and end_time_sec. The actual travel time between the origin stop and the destination stop, in seconds. Integer 648 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Travel Times,Rapid Transit,MBTA,System Data,Vehicle Location Data","This file contains the travel times between origin and destination pairs on a single line for 2020.","","Massachusetts Bay Transportation Authority","CC0",,,"public","CC0-1.0","Office of Performance Management & Innovation","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"cb4cf52bafb1402b9b978a424ed4dd78","MBTAHUB_ADMIN","Tue, 21 Apr 2020 18:58:21 GMT","Fri, 17 Jan 2025 14:32:34 GMT","MBTA Rapid Transit Events 2020","CSV Collection","It includes all heavy rail and light rail rapid transit lines. These events are used to calculate travel times, dwell times, and headways. Due to track circuit or other data issues, data is not guaranteed to be complete for any stop or date.
+Data Dictionary:
+
+Name
+Description
+Data Type
+Example
+
+service_date
+Date for which events should be returned.
+Date
+2019-12-31
+
+route_id
+GTFS-compatible route for which events should be returned.
+String
+Orange
+
+trip_id
+GTFS-compatible trip for which events should be returned.
+String
+461_1
+
+direction_id
+GTFS-compatible direction for which events should be returned.
+Integer
+0
+
+stop_id
+GTFS-compatible stop for which ridership should be returned.
+String
+place-wlsta
+
+stop_sequence
+GTFS-compatible order of stops on a route for which events should be returned.
+Integer
+590
+
+vehicle_id
+Property of “events”. The identifier for the vehicle performing the trip for which events are returned.
+String
+R-545A9644
+
+vehicle_label
+Property of “events”. Human-readable, publicly visible identifier for the vehicle.
+String
+3830-3652
+
+event_type
+The type of event: ‘ARR’ for arrival, ‘DEP’ for departure, ‘PRA’ for predicted arrival, and ‘PRD’ for predicted departure. PRA and PRD events occur when the Performance system is relatively sure that a train actually made the indicated movement at the indicated station, but the system did not observe an ""actual"" event from the realtime system. In that case, we use the last available prediction for the given event as a reasonable proxy. We often lack actual ARR events at terminals because the realtime system is designed for tracking trains that passengers want to board, not necessarily trains that have already arrived at a terminal station. The instant a train arrives at a terminal station (e.g. arriving northbound at Oak Grove), the MBTA-performance system may no longer be able to track its location. In some cases, we are not able to fill in a PRA event at all, so some types of analysis are less accurate at terminals. Depending on your objectives, you may wish to use the second-to-last station as a proxy
+String
+DEP
+
+event_time
+The time of the event, in epoch time.
+Integer
+1546349755
+
+event_time_sec
+The time of the event, in seconds after midnight.
+Integer
+30955
+
+MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Events,Rapid Transit,MBTA,System Data,Vehicle Location Data","This file contains the arrival and departure events for rapid transit lines for 2020.","","Massachusetts Bay Transportation Authority","CC0",,,"public","CC0-1.0","Office of Performance Management & Innovation","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"05d1f5aee81448b6baf7b1094716331f","MBTAHUB_ADMIN","Thu, 16 Apr 2020 20:11:55 GMT","Fri, 17 Jan 2025 14:32:07 GMT","MBTA Rapid Transit Headways 2020","Feature Service","It includes all heavy rail and light rail rapid transit lines. Due to track circuit or other data issues, data is not guaranteed to be complete for any stop or date. Due to data collection issues, the following dates and/or lines are missing from this data set: March 23, 2020 Mattapan High Speed Line.
+Data Dictionary:
+
+Name
+Description
+Data Type
+Example
+
+service_date
+Date for which headways should be returned.
+Date
+2020-12-31
+
+route_id
+GTFS-compatible route for which headways should be returned.
+String
+Orange
+
+direction_id
+GTFS-compatible direction for which headways should be returned.
+Integer
+0
+
+stop_id
+GTFS-compatible stop for which headways should be returned.
+String
+70154
+
+start_time_sec
+Property of “Headway”. Expressed in ""seconds after midnight."" The time associated with the departure event of previous vehicle.
+Integer
+45763
+
+end_time_sec
+Property of “Headway”. Expressed in ""seconds after midnight."" The time associated with the departure event of current vehicle.
+Integer
+46411
+
+headway_time_sec
+Property of “Headway”. Difference between start_time_sec and end_time_sec. The actual headway between two trains with the same destination, in seconds. Red line trunk stops will have two headways for the same southbound train: one dependent on the destination and one independent of the destination.
+Integer
+648
+
+destination
+Property of “Headway”. Intended destination for the vehicle.
+String
+Forest Hills
+
+MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Headway,Rapid Transit,MBTA,System Data,Vehicle Location Data","This file contains the headways, or time between the departure time of the current trip and the departure time of the previous trip from the same ""destination"", for rapid transit vehicles, for 2020.","","Massachusetts Bay Transportation Authority","CC0",,"https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_Rapid_Transit_Headways_2020/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"90ed9092bd7a4285b296d5ff938edf29","MBTAHUB_ADMIN","Wed, 13 Sep 2023 13:25:06 GMT","Thu, 16 Jan 2025 21:54:01 GMT","MBTA Service Alerts","Feature Service","","Performance,MBTA,2022,2023","MBTA Service Alerts, 2019 to mid-2023.","","","",,"https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_Historical_Service_Alerts/FeatureServer","public",,"Office of Performance Management & Innovation","",""
+"21ea74717cda441db3ae40d2cbc79a15","MBTAHUB_ADMIN","Tue, 22 Oct 2024 14:53:02 GMT","Thu, 16 Jan 2025 21:51:36 GMT","MBTA Service Alerts 2020-2023","CSV Collection","Data Dictionary: Name Description Data Type Example alert_id Unique identifier for this Alert. Subsequent updates to it will have the same ID. integer 293631 cause Cause of this alert. string construction cause_detail Description of the cause of the alert that allows for agency-specific language; more specific than the Cause. string traffic effect The effect of this problem on the affected entity. string detour effect_detail Description of the effect of the alert that allows for agency-specific language; more specific than the Effect. string parking_issue severity_level The severity of the alert. string severe severity How severe the alert is from least (0) to most (10) severe. integer 5 header Header for the alert. string description Description for the alert string alert_lifecycle Whether the alert is in effect now, will be in the future, or has been for a while. string ongoing duration_certainty Whether the alert has a known, unknown, or estimated end. string estimated service_effect Brief summary of effect and affected service. string Route 131 delay timeframe_text Human readable summary of when service will be disrupted. string Wednesday through Friday recurrence_text Human readable summary of how active_period values are repeating (ex: “daily”, “weekdays”). string 2 days a week created_dt Creation time, in EST Datetime. date 2019-02-0110:02:13 last_modified_dt Last meaningful modification time, in EST Datetime. date 2020-01-2806:52:30 closed_dt Closed time, in EST Datetime date 2023-09-1807:20:24 active_period_start_date Start date when the alert should be shown to the user. date 2021-02-26 active_period_start_dt Start time when the alert should be shown to the user. date 2021-02-2610:00:00 active_period_end_dt End time when the alert should be shown to the user. date 2023-07-1309:14:56 last_push_notification_dt Time when message about alert has been sent to user date 2021-02-2611:23:00 route_id Route id of entities whose users we should notify of this alert. string CR-Haverhill route_type Route type of entities whose users we should notify of this alert. integer 2 direction_id Direction id for the entities whose users we should notify of this alert. integer 1 stop_id Stop id for the entity whose users we should notify of this alert. string 2827 facility_id Facility of the entity whose users we should notify of this alert. string subplat-WML-0340 activities Activity of the entity whose users we should notify of this alert. string Board|Exit MBTA Alerts data is sourced from Lightweight Application for Measuring Performance (LAMP). To learn more about LAMP, please visit LAMP website. MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Performance,Alerts,2022,2023","This file includes the MBTA GTFS Realtime alerts from 2020 to 2023.","","","","en-us",,"public",,"Office of Performance Management & Innovation","",""
+"2d415555f63b431597721151a7e07a3e","MBTAHUB_ADMIN","Thu, 01 Apr 2021 15:07:40 GMT","Thu, 16 Jan 2025 21:25:49 GMT","MBTA Bus Arrival Departure Times 2021","CSV Collection","This file contains the arrival and departure events for buses between January and December 2021. Due to data collection issues, data is not guaranteed to be complete for any stop or date. Data Dictionary:
+
+Name
+Description
+Data Type
+Example
+
+service_date
+Date on which the trip took place. Service dates run from around 2:00AM - 1:59:59AM
+Date
+2019-12-31
+
+route_id
+Route Id
+String
+01
+
+direction_id
+Identifies whether the trip is traveling inbound or outbound
+String
+Inbound
+
+half_trip_id
+Identification for the one way trip
+Integer
+40836717
+
+stop_id
+GTFS-compatible stop
+Integer
+75
+
+time_point_id
+The code for the timepoint
+String
+mit
+
+time_point_order
+The order of this timepoint in the trip
+Integer
+4
+
+point_type
+Identifies whether the stop is the starting point, midpoint, or endpoint for the trip
+String
+Midpoint
+
+standard_type
+Identifies whether the trip should be evaluated on the scheudle standard or headway standard.
+String
+Headway
+
+scheduled
+The time the trip was scheduled to depart the stop. The scheduled time should not be used to evaluated reliability if this trip is evaluated on the headway standard. Only the headway and run time should be used per the Service Delivery Policy.
+Time
+12:30 AM
+
+actual
+The time the trip actually departed the timepoint.
+Time
+12:29 AM
+
+scheduled_headway
+The scheduled time between the trip and the previous trip at the stop, in seconds. NULL if this trip is evaluated on the schedule standard.
+
+Integer
+1200
+
+headway
+The actual time between the trip and the previous trip at the stop, in seconds. NULL if this trip is evaluated on the schedule standard or if this is the last stop on the trip (endpoint). Endpoints are evaluated by whether the trip runtime is within 120% of the scheduled run time.
+
+Integer
+1163
+
+MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Bus,System Data,Headway,Vehicle Location Data","","","Massachusetts Bay Transportation Authority","CC0",,,"public","CC0-1.0","Office of Performance Management & Innovation","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"611b8c77f30245a0af0c62e2859e8b49","MBTAHUB_ADMIN","Thu, 01 Apr 2021 14:47:30 GMT","Thu, 16 Jan 2025 21:24:56 GMT","MBTA Rapid Transit Events 2021","CSV Collection","It includes all heavy rail and light rail rapid transit lines. These events are used to calculate travel times, dwell times, and headways. Due to track circuit or other data issues, data is not guaranteed to be complete for any stop or date.
+Data Dictionary:
+
+Name
+Description
+Data Type
+Example
+
+service_date
+Date for which events should be returned.
+Date
+2019-12-31
+
+route_id
+GTFS-compatible route for which events should be returned.
+String
+Orange
+
+trip_id
+GTFS-compatible trip for which events should be returned.
+String
+461_1
+
+direction_id
+GTFS-compatible direction for which events should be returned.
+Integer
+0
+
+stop_id
+GTFS-compatible stop for which ridership should be returned.
+String
+place-wlsta
+
+stop_sequence
+GTFS-compatible order of stops on a route for which events should be returned.
+Integer
+590
+
+vehicle_id
+Property of “events”. The identifier for the vehicle performing the trip for which events are returned.
+String
+R-545A9644
+
+vehicle_label
+Property of “events”. Human-readable, publicly visible identifier for the vehicle.
+String
+3830-3652
+
+event_type
+The type of event: ‘ARR’ for arrival, ‘DEP’ for departure, ‘PRA’ for predicted arrival, and ‘PRD’ for predicted departure. PRA and PRD events occur when the Performance system is relatively sure that a train actually made the indicated movement at the indicated station, but the system did not observe an ""actual"" event from the realtime system. In that case, we use the last available prediction for the given event as a reasonable proxy. We often lack actual ARR events at terminals because the realtime system is designed for tracking trains that passengers want to board, not necessarily trains that have already arrived at a terminal station. The instant a train arrives at a terminal station (e.g. arriving northbound at Oak Grove), the MBTA-performance system may no longer be able to track its location. In some cases, we are not able to fill in a PRA event at all, so some types of analysis are less accurate at terminals. Depending on your objectives, you may wish to use the second-to-last station as a proxy
+String
+DEP
+
+event_time
+The time of the event, in epoch time.
+Integer
+1546349755
+
+event_time_sec
+The time of the event, in seconds after midnight.
+Integer
+30955
+
+MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Events,Rapid Transit,MBTA,System Data,Vehicle Location Data","This file contains the arrival and departure events for rapid transit lines for 2021.","","Massachusetts Bay Transportation Authority","CC0",,,"public","CC0-1.0","Office of Performance Management & Innovation","",""
+"4892695c4baf42419cbe19bd4995bc3a","MBTAHUB_ADMIN","Fri, 30 Apr 2021 20:01:39 GMT","Thu, 16 Jan 2025 21:23:37 GMT","MBTA Rapid Transit Travel Times 2021","CSV Collection","It includes all heavy rail and light rail rapid transit lines. These travel times are calculated from the departure time at the origin stop to the arrival time at the destination stop. Due to track circuit or other data issues, data is not guaranteed to be complete for any origin-destination pair or date. Data Dictionary: Name Description Data Type Example service_date Date for which travel times should be returned. Date 43830 route_id GTFS-compatible route for which travel times should be returned. String Orange direction_id GTFS-compatible direction for which travel times should be returned. Integer 0 from_stop_id GTFS-compatible stop representing the origin stop in a pair. String 70205 to_stop_id GTFS-compatible stop representing the destination stop in a pair. String 70154 start_time_sec Property of “Travel Times”. Expressed in ""seconds after midnight."" The time associated with the departure event of the vehicle from the origin stop of the pair. Integer 45763 end_time_sec Property of “Travel Times”. Expressed in ""seconds after midnight."" The time associated with the arrival event of the vehicle to the destination stop of the pair. Integer 46411 travel_time_sec Property of “Travel Times”. Difference between start_time_sec and end_time_sec. The actual travel time between the origin stop and the destination stop, in seconds. Integer 648 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Performance,Travel Times,Rapid Transit,MBTA,Service Data","This file contains the travel times between origin and destination pairs on a single line for 2021.","","Massachusetts Bay Transportation Authority","CC0",,,"public","CC0-1.0","Office of Performance Management & Innovation","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"dc61d2ca669842de81ea285457960202","MBTAHUB_ADMIN","Thu, 03 Feb 2022 22:31:41 GMT","Thu, 16 Jan 2025 21:22:39 GMT","MBTA Rapid Transit Headways 2021","Feature Service","It includes all heavy rail and light rail rapid transit lines. Due to track circuit or other data issues, data is not guaranteed to be complete for any stop or date.
+
+Data Dictionary:
+
+Name Description Data Type Example service_date Date for which headways should be returned. Date 2021-12-31 route_id GTFS-compatible route for which headways should be returned. String Orange direction_id GTFS-compatible direction for which headways should be returned. Integer 0 stop_id GTFS-compatible stop for which headways should be returned. String 70154 start_time_sec Property of “Headway”. Expressed in ""seconds after midnight."" The time associated with the departure event of previous vehicle. Integer 45763 end_time_sec Property of “Headway”. Expressed in ""seconds after midnight."" The time associated with the departure event of current vehicle. Integer 46411 headway_time_sec Property of “Headway”. Difference between start_time_sec and end_time_sec. The actual headway between two trains with the same destination, in seconds. Red line trunk stops will have two headways for the same southbound train: one dependent on the destination and one independent of the destination. Integer 648 benchmark_headway_time_sec Property of ""Headway"". Average scheduled headway for the 30-minute period in which the end_time_sec takes place. Integer 645 destination Property of “Headway”. Intended destination for the vehicle. String Forest Hills MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","System Data,Headway,Rapid Transit,MBTA,OPMI","This file contains the headways, or time between the departure time of the current trip and the departure time of the previous trip from the same ""destination"", for rapid transit vehicles, for 2021.","","","CC0",,"https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_Rail_Headways_2021/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","",""
+"e09d680af4a0441eb49ce4ef7b1796eb","MBTAHUB_ADMIN","Fri, 26 Jun 2020 21:11:11 GMT","Thu, 16 Jan 2025 21:20:34 GMT","MBTA Rapid Transit Stop Orders","Feature Service","The data in this file represent the order in which stations are placed along a route. The sequence of stops differs by direction and origin-destination. The orders are not necessarily equivalent to GTFS attribute stop_sequence.
+
+Name
+Description
+Data Type
+Example
+
+route_id
+GTFS-compatible route of the heavy or light rail line.
+String
+Red
+
+direction_id
+GTFS-compatible direction. Binary identifier.
+Integer
+1
+
+origin
+Terminal station from which the vehicle begins the trip.
+String
+Bowdoin
+
+destination
+Terminal station from which the vehicle ends the trip.
+String
+Wonderland
+
+stop_order
+Order in which the specified stop takes place on the specified route, direction, and origin/destination pair.
+Integer
+5
+
+stop_id
+GTFS-compatible parent station identifier.
+String
+place-mvbcl
+
+stop_name
+GTFS-compatible parent station name.
+String
+Maverick
+
+MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Reference Table,System Data,2022,2023,2024","Updated based on the changes to the order of stops in the MBTA rail system. Use to find the order of stops by joining on route, stop, and direction or terminal station.","","Massachusetts Bay Transportation Authority","CC0","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_Rapid_Transit_Stop_Orders/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"2d7d34175e554ddc9f33c7f0ad6d6872","MBTAHUB_ADMIN","Mon, 13 Jan 2020 19:25:29 GMT","Thu, 16 Jan 2025 21:17:48 GMT","Core Service Area","Feature Service","This file contains the 65 cities and towns in Massachusetts for which MBTA bus or rapid transit service is provided. This data is based off of the 2010 census. The legislative intent for some boundaries could not be mapped. Boundaries where that is true are identified in the attribute information. Name Description Data Type Example town_name Full name for the MA town or city identification. String Boston town_id MassGIS Town-ID Code (alphabetical, 1-351) Numeric 34 sum_acres Area covered by the town or city in acres. Double 31304.22 sum_square Area covered by the town or city in square miles. Double 48.91 Use constraints: This data set, like all other cartographic products may contain inherent aberrations in geography or thematical errors. The boundaries included in this data set were developed using accepted GIS methodology. Cartographic products can never truly represent real-world conditions due to several factors. These factors can include, but are not limited to: human error upon digitizing, computational tolerance of the computer, or the distortion of map symbology. Because of these factors MassGIS cannot be held legally responsible for personal or property damages resulting from any type of use of the data set. These boundaries are suitable for map display and planning purposes. They cannot be used as a substitute for the work of a professional land surveyor. MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Service Area,System Information,2022,2023","This file contains the 65 cities and towns in Massachusetts for which MBTA bus or rapid transit service is provided. This data is based off of the 2010 census. The legislative intent for some boundaries could not be mapped. Boundaries where that is true are identified in the attribute information.","","Massachusetts Bay Transportation Authority","CC0","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/Core_Service_Area/FeatureServer","public","CC0-1.0","MassGIS","-73.533318,41.23117,-69.89859,42.888312",""
+"24a97982b39f4febb504c9e6cb55879b","MBTAHUB_ADMIN","Wed, 10 Aug 2022 21:26:01 GMT","Thu, 16 Jan 2025 21:03:46 GMT","PATI Bus Stops","Feature Service","The Plan for Accessible Transit Infrastructure (PATI) data layer provides locations and information about bus stops within the MBTA bus service network from the system-wide survey of bus assets. Each bus stop has information about the location of the stop, sidewalk condition, if shelters or benches are present, if amenities are blocking access and the condition and dimensions of the landing pad. This shapefile contains data on MBTA bus stop accessibility and amenities. Each row contains information for one bus stop from the MBTA’s Plan for Accessible Transit Infrastructure (PATI) program, including the priority of the stop from the original 2017 PATI audit, and its current status towards ADA compliance. Stops which are fully ADA compliant—which may have already undergone construction through the PATI program, or may have already been compliant in 2017—are marked “Compliant.” Stops requiring accessibility improvements which are a focus of the PATI program are marked “High” and “Critical” Priority. Stops which are not a focus of the PATI program are marked “Low” and “Medium” Priority. Municipalities are typically responsible for bus stop upkeep and accessibility. PATI status data is up to date as of Jan 2024. The dataset also contains data on amenities for bus stops reviewed in the 2017 PATI audit, including information such as benches, trees, and utility poles. Amenities data is from 2017 and may not reflect current bus stop amenities. Data dictionary:
+Field
+Type
+Description
+Example
+
+Stop_ID
+Number
+Unique GTFS ID of the stop.
+3713
+
+Stop_Name
+Text
+GTFS name of the stop.
+Quincy Ave @ Weymouth Landing
+
+Longitude
+Number
+Longitudinal coordinate of stop.
+-70.969034
+
+Latitude
+Number
+Latitudinal coordinate of stop.
+42.221602
+
+Municip
+Text
+Town or city in which stop is located.
+Braintree
+
+PATI_Prior
+Text
+PATI priority score for stop, from Low to Critical priority, or
+Compliant.
+Medium
+
+PATI_Prgrm
+Text
+Stop status towards PATI compliance.
+PATI Future
+
+Brf_Status
+Text
+Additional PATI notes for stop.
+Compliant
+
+Routes
+List of Number
+Bus routes which serve the stop.
+10, 11
+
+Bus_Ctgry
+Text
+Most frequent route category among routes served by stop.
+Key Bus
+
+Trash17
+Number
+Number of trash cans. (2017)
+0
+
+BikeRks17
+Number
+Number of bicycle racks. (2017)
+1
+
+Trees17
+Number
+Number of trees. (2017)
+0
+
+Hydrants17
+Number
+Number of hydrants. (2017)
+1
+
+UtPoles17
+Number
+Number of utility poles. (2017)
+0
+
+LtPoles17
+Number
+Number of light poles. (2017)
+1
+
+NewsBxs17
+Number
+Number of newspaper boxes. (2017)
+2
+
+MailBxs17
+Number
+Number of mailboxes. (2017)
+1
+
+Planters17
+Number
+Number of planters. (2017)
+0
+
+BlkdBath17
+Text
+If the path of travel is obstructed to a length of below 36 inches.
+(2017)
+Yes
+
+SeatNum17
+Number
+Number of available seats. (2017)
+3
+
+SeatType17
+Text
+Type of available seating. (2017)
+Wood Bench
+
+SeatCond17
+Text
+Condition of available seating. (2017)
+Good
+MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Bus,MBTA,2022,2023,2024,2025","This shapefile contains data on MBTA bus stop accessibility and amenities. Each row contains information for one bus stop from the MBTA’s Plan for Accessible Transit Infrastructure (PATI) program, including the priority of the stop from the original 2017 PATI audit, and its current status towards ADA compliance. ","","","CC0","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/PATI_Bus_Stops/FeatureServer","public","CC0-1.0","Massachusetts geoDOT","-71.29117299999996,42.10680400000006,-70.84501099999994,42.58743500000003",""
+"0b4dc16b8b984836962229865d5b573b","MBTAHUB_ADMIN","Tue, 04 Jun 2024 19:45:42 GMT","Wed, 08 Jan 2025 20:43:06 GMT","MBTA Rapid Transit Travel Times 2024","CSV Collection","This file contains the travel times
+between origin and destination pairs on a single line.
+
+It includes
+all heavy rail and light rail rapid transit lines. These travel times are
+calculated from the departure time at the from_stop to the arrival time
+at the to_stop. Due to track circuit or other data issues, data is not
+guaranteed to be complete for any origin-destination pair or date.
+
+Data Dictionary
+
+Each
+row represents a unique service_date-trip_id-from_stop_id-to_stop_id
+unit for rail service.
+
+field name
+
+type
+
+description
+
+source
+
+example
+
+service_date
+
+date
+
+equivalent
+to GTFS-RT start_date value in Trip Descriptor as date instead
+of string
+
+GTFS-RT
+
+2024-01-01
+
+route_id
+
+string
+
+equivalent
+to GTFS-RT route_id value in Trip Descriptor
+
+GTFS-RT
+
+Orange
+
+trip_id
+
+string
+
+equivalent
+to GTFS-RT trip_id value in Trip Descriptor
+
+GTFS-RT
+
+62248746
+
+direction_id
+
+int
+
+equivalent
+to GTFS-RT direction_id value in Trip Descriptor
+
+GTFS-RT
+
+0
+
+direction
+
+string
+
+equivalent
+to GTFS direction value from directions.txt for route_id-direction_id pair
+
+GTFS
+
+East
+
+from_parent_station
+
+string
+
+stop_name of the parent_station associated with the stop_id from stops.txt for origin
+stop.
+
+GTFS
+
+place-amory
+
+from_stop_id
+
+string
+
+equivalent
+to GTFS-RT stop_id value in VehiclePosition
+for origin stop.
+
+GTFS-RT
+
+170141
+
+from_stop_name
+
+string
+
+equivalent to GTFS stop_name from stops.txt for destination
+stop_id.
+
+GTFS
+
+Amory Street
+
+to_parent_station
+
+string
+
+stop_name of the parent_station associated with the stop_id from stops.txt for destination stop.
+
+GTFS
+
+place-babck
+
+to_stop_id
+
+string
+
+equivalent
+to GTFS-RT stop_id value in VehiclePosition for
+destination stop.
+
+GTFS-RT
+
+70560
+
+to_stop_name
+
+string
+
+equivalent
+to GTFS stop_name from stops.txt for origin
+stop_id.
+
+GTFS
+
+Babcock
+Street
+
+from_stop_departure_datetime
+
+datetime
+
+earliest ""IN_TRANSIT_TO"" OR
+""INCOMING_AT"" status timestamp from origin stop (previous stop) from GTFS-RT VehiclePosition as an Eastern datetime.
+
+GTFS-RT
+
+11/1/2023 5:24:51 AM
+
+from_stop_departure_sec
+
+int
+
+from_stop_departure_datetime as
+seconds after midnight
+
+LAMP
+Calculated
+
+84912
+
+to_stop_arrival_datetime
+
+datetime
+
+earliest
+""STOPPED_AT"" status timestamp for destination stop from
+GTFS-RT VehiclePosition or
+last arrival timestamp from GTFS-RT StopTimeUpdate if
+VehiclePosition value is not available as an Eastern datetime.
+
+GTFS-RT
+
+11/1/2023 5:25:34 AM
+
+to_stop_arrival_sec
+
+int
+
+to_stop_arrival_datetime as
+seconds after midnight
+
+LAMP
+Calculated
+
+84992
+
+travel_time_sec
+
+int
+
+seconds
+the vehicle spent traveling between origin stop and
+destination stop on trip.
+
+Calculated
+for Open Data Portal
+
+80
+
+Changes to the data
+
+Rapid Transit Travel Time data is now sourced from Lightweight
+Application for Measuring Performance (LAMP). To learn more about
+LAMP, please visit LAMP website.
+
+The data changed as follows:
+
+Trip_id field
+is added.
+
+Direction field is
+added.
+
+From_parent_station field
+is added.
+
+From_stop_name field
+is added.
+
+To_parent_station field
+is added.
+
+To_stop_name field
+is added.
+
+From_stop_departure_datetime field
+is added.
+
+To_stop_arrival_datetime field
+is added.
+
+Start_time_sec is now from_stop_departure_sec.
+
+End_time_sec is now to_stop_arrival_sec.
+
+MassDOT/MBTA shall not be held liable for any errors in this
+data. This includes errors of omission, commission, errors concerning the
+content of the data, and relative and positional accuracy of the data. This
+data cannot be construed to be a legal document. Primary sources from which
+this data was compiled must be consulted for verification of information
+contained in this data.","Rapid Transit,Travel Times,System Data,Vehicle Location Data,2024","","","","CC0",,,"public","CC0-1.0","Massachusetts geoDOT","",""
+"0711756aa5e1400891e79b984a94b495","MBTAHUB_ADMIN","Tue, 21 May 2024 15:37:29 GMT","Wed, 08 Jan 2025 19:42:30 GMT","MBTA Rapid Transit Events 2024","CSV Collection","This file contains the arrival and departure events for rapid transit rail lines for 2024. It
+includes all heavy rail and light rail rapid transit lines. These events are
+used to calculate travel times, dwell times, and headways. Due to track circuit
+or other data issues, data is not guaranteed to be complete for any stop or
+date.
+
+Data Dictionary
+
+Each
+row represents a unique service_date-trip_id-stop_id-event unit for rail
+service.
+
+field name
+
+type
+
+description
+
+source
+
+example
+
+service_date
+
+date
+
+equivalent
+to GTFS-RT start_date value in Trip Descriptor as date instead
+of string.
+
+GTFS-RT
+
+2024-01-01
+
+route_id
+
+string
+
+equivalent
+to GTFS-RT route_id value in Trip Descriptor.
+
+GTFS-RT
+
+Green-B
+
+trunk_route_id
+
+string
+
+line if multiple routes exist on line, otherwise route_id,
+e.g. Green for Green-B route, Blue for Blue route.
+
+GTFS-RT
+
+Green
+
+trip_id
+
+string
+
+equivalent
+to GTFS-RT trip_id value in Trip Descriptor.
+
+GTFS-RT
+
+ADDED-1581804432
+
+direction_id
+
+int
+
+equivalent
+to GTFS-RT direction_id value in Trip Descriptor.
+
+GTFS-RT
+
+0
+
+direction
+
+string
+
+equivalent to GTFS direction value from directions.txt for route_id-direction_id pair.
+
+GTFS
+
+East
+
+parent_station
+
+string
+
+the parent_station associated
+with the stop_id from stops.txt.
+
+GTFS
+
+place-wascm
+
+stop_id
+
+string
+
+equivalent
+to GTFS-RT stop_id value in VehiclePosition.
+
+GTFS-RT
+
+70560
+
+stop_name
+
+string
+
+equivalent to GTFS stop_name from stops.txt for stop_id.
+
+GTFS
+
+Washington
+Street
+
+sync_stop_sequence
+
+int
+
+stop sequence that is consistent across all branches of
+a trunk_route_id for
+a particular parent_station.
+
+Lamp Calculated
+
+3
+
+vehicle_id
+
+string
+
+equivalent
+to GTFS-RT id value in VehicleDescriptor.
+
+GTFS-RT
+
+R-545A9644
+
+vehicle_label
+
+string
+
+equivalent
+to GTFS-RT label value in VehicleDescriptor.
+
+GTFS-RT
+
+3830-3652
+
+event_type
+
+string
+
+ARR:
+""STOPPED_AT""
+status for a trip-stop pair from GTFS-RT VehiclePosition.
+DEP:
+""IN_TRANSIT_TO"" OR ""INCOMING_AT"" status
+for a trip-stop pair from GTFS-RT VehiclePosition.
+
+GTFS-RT
+
+ARR
+
+event_time
+
+datetime
+
+For
+ARR:
+earliest
+""STOPPED_AT"" status timestamp for a trip-stop pair from
+GTFS-RT VehiclePosition or
+last arrival timestamp from GTFS-RT StopTimeUpdate if
+VehiclePosition value is not available as an Eastern datetime.
+For
+DEP:
+earliest ""IN_TRANSIT_TO"" OR
+""INCOMING_AT"" status timestamp for a trip-stop pair from GTFS-RT VehiclePosition as an Eastern datetime.
+
+GTFS-RT
+
+11/1/2023 5:24:51 AM
+
+event_time_sec
+
+int
+
+event_time in
+seconds after midnight.
+
+LAMP
+Calculated
+
+30955
+
+Changes to the data
+
+Rapid Transit Events data is now sourced from Lightweight
+Application for Measuring Performance (LAMP). To learn more about
+LAMP, please visit LAMP website.
+
+The data changed as follows:
+
+Trunk_route_id field
+is added.
+
+Direction field is
+added.
+
+Parent_station field is
+added.
+
+Stop_name field
+is added. Stop_id is now
+string format.
+
+Stop_sequence
+is now sync_stop_sequence, please see LAMP documentation
+for differences.
+
+Event_time is now datetime
+format.
+
+MassDOT/MBTA shall not be held liable for any errors in this
+data. This includes errors of omission, commission, errors concerning the
+content of the data, and relative and positional accuracy of the data. This
+data cannot be construed to be a legal document. Primary sources from which
+this data was compiled must be consulted for verification of information
+contained in this data.","MBTA,Transit,Events,2024","","","Massachusetts Bay Transportation Agency","CC0",,,"public","CC0-1.0","Massachusetts geoDOT","",""
+"17cca8087d11486cbff9db871053b020","MBTAHUB_ADMIN","Thu, 20 Jul 2023 21:48:24 GMT","Tue, 07 Jan 2025 19:54:46 GMT","MBTA Rapid Transit Stop Distances","Feature Service","Distances, in meters and miles, between stops on MBTA rapid transit lines. This includes the Red Line, Green Line, Blue Line, Orange Line, and Mattapan Trolley. This data is obtained from GTFS. While suitable for the vast majority of applications, small inaccuracies may be present. MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Reference Table,System Data,2023","","","","CC0","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_Rapid_Transit_Stop_Distances/FeatureServer","public","CC0-1.0","Massachusetts geoDOT","",""
+"ef464a75666349f481353f16514c06d0","MBTAHUB_ADMIN","Thu, 10 Feb 2022 18:06:31 GMT","Tue, 07 Jan 2025 19:52:59 GMT","MBTA Bus Arrival Departure Times 2022","CSV Collection","This file contains the arrival and departure events for buses up to the most recent completed month of 2022. Due to data collection issues, data is not guaranteed to be complete for any stop or date. Data Dictionary:
+
+Name
+Description
+Data Type
+Example
+
+service_date
+Date on which the trip took place. Service dates run from around 2:00AM - 1:59:59AM
+Date
+2019-12-31
+
+route_id
+Route Id
+String
+01
+
+direction_id
+Identifies whether the trip is traveling inbound or outbound
+String
+Inbound
+
+half_trip_id
+Identification for the one way trip
+Integer
+40836717
+
+stop_id
+GTFS-compatible stop
+Integer
+75
+
+time_point_id
+The code for the timepoint
+String
+mit
+
+time_point_order
+The order of this timepoint in the trip
+Integer
+4
+
+point_type
+Identifies whether the stop is the starting point, midpoint, or endpoint for the trip
+String
+Midpoint
+
+standard_type
+Identifies whether the trip should be evaluated on the scheudle standard or headway standard.
+String
+Headway
+
+scheduled
+The time the trip was scheduled to depart the stop. The scheduled time should not be used to evaluated reliability if this trip is evaluated on the headway standard. Only the headway and run time should be used per the Service Delivery Policy.
+Time
+12:30 AM
+
+actual
+The time the trip actually departed the timepoint.
+Time
+12:29 AM
+
+scheduled_headway
+The scheduled time between the trip and the previous trip at the stop, in seconds. NULL if this trip is evaluated on the schedule standard.
+
+Integer
+1200
+
+headway
+The actual time between the trip and the previous trip at the stop, in seconds. NULL if this trip is evaluated on the schedule standard or if this is the last stop on the trip (endpoint). Endpoints are evaluated by whether the trip runtime is within 120% of the scheduled run time.
+
+Integer
+1163
+
+MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Bus,System Data,Headway,Vehicle Location Data,2022","","","Massachusetts Bay Transportation Authority","CC0",,,"public","CC0-1.0","Office of Performance Management & Innovation","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"b7b36fdb7b3a4728af2fccc78c2ca5b7","MBTAHUB_ADMIN","Wed, 05 Apr 2023 20:53:04 GMT","Tue, 07 Jan 2025 19:52:32 GMT","MBTA Bus Arrival Departure Times 2023","CSV Collection","This file contains the arrival and departure events for buses up to the most recent completed month of 2023. Due to data collection issues, data is not guaranteed to be complete for any stop or date. Data Dictionary:
+
+Name
+Description
+Data Type
+Example
+
+service_date
+Date on which the trip took place. Service dates run from around 2:00AM - 1:59:59AM
+Date
+2019-12-31
+
+route_id
+Route Id
+String
+01
+
+direction_id
+Identifies whether the trip is traveling inbound or outbound
+String
+Inbound
+
+half_trip_id
+Identification for the one way trip
+Integer
+40836717
+
+stop_id
+GTFS-compatible stop
+Integer
+75
+
+time_point_id
+The code for the timepoint
+String
+mit
+
+time_point_order
+The order of this timepoint in the trip
+Integer
+4
+
+point_type
+Identifies whether the stop is the starting point, midpoint, or endpoint for the trip
+String
+Midpoint
+
+standard_type
+Identifies whether the trip should be evaluated on the scheudle standard or headway standard.
+String
+Headway
+
+scheduled
+The time the trip was scheduled to depart the stop. The scheduled time should not be used to evaluated reliability if this trip is evaluated on the headway standard. Only the headway and run time should be used per the Service Delivery Policy.
+Time
+12:30 AM
+
+actual
+The time the trip actually departed the timepoint.
+Time
+12:29 AM
+
+scheduled_headway
+The scheduled time between the trip and the previous trip at the stop, in seconds. NULL if this trip is evaluated on the schedule standard.
+
+Integer
+1200
+
+headway
+The actual time between the trip and the previous trip at the stop, in seconds. NULL if this trip is evaluated on the schedule standard or if this is the last stop on the trip (endpoint). Endpoints are evaluated by whether the trip runtime is within 120% of the scheduled run time.
+
+Integer
+1163
+
+MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Bus,System Data,Headway,Vehicle Location Data,2023","","","Massachusetts Bay Transportation Authority","CC0","en-us",,"public","CC0-1.0","Office of Performance Management & Innovation","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"0e4b9db0a1d8471e8ad22e8443d2a7f8","MBTAHUB_ADMIN","Tue, 05 Mar 2024 20:13:49 GMT","Tue, 07 Jan 2025 19:48:21 GMT","GTFS Post-rating Recap - Winter 2022","CSV Collection","The MBTA GTFS Post-rating Recap collection contains text files that describe MBTA schedule which includes any planned changes in service that became known after the rating began (weekend shuttle buses, change to reduced service schedule due to a snow day, etc.) for a specific season. Data dictionary: https://github.com/mbta/gtfs-documentation/blob/master/reference/gtfs.md To view all previously published GTFS files, please refer to the link below: https://github.com/mbta/gtfs-documentation/blob/master/reference/gtfs-archive.md MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","GTFS,Map Service,MBTA,Reference Table,System Data,2022","","","Massachusetts Bay Transportation Authority","CC0","en-us",,"public","CC0-1.0","Office of Performance Management & Innovation","",""
+"99094a0c59e443cdbdaefa071c6df609","MBTAHUB_ADMIN","Fri, 04 Feb 2022 21:10:21 GMT","Tue, 07 Jan 2025 19:42:25 GMT","MBTA Rapid Transit Events 2022","CSV Collection","It includes all heavy rail and light rail rapid transit lines. These events are used to calculate travel times, dwell times, and headways. Due to track circuit or other data issues, data is not guaranteed to be complete for any stop or date.
+
+Data Dictionary:
+
+Name
+Description
+Data Type
+Example
+
+service_date
+Date for which events should be returned.
+Date
+2022-01-01
+
+route_id
+GTFS-compatible route for which events should be returned.
+String
+Orange
+
+trip_id
+GTFS-compatible trip for which events should be returned.
+String
+461_1
+
+direction_id
+GTFS-compatible direction for which events should be returned.
+Integer
+0
+
+stop_id
+GTFS-compatible stop for which ridership should be returned.
+String
+place-wlsta
+
+stop_sequence
+GTFS-compatible order of stops on a route for which events should be returned.
+Integer
+590
+
+vehicle_id
+Property of “events”. The identifier for the vehicle performing the trip for which events are returned.
+String
+R-545A9644
+
+vehicle_label
+Property of “events”. Human-readable, publicly visible identifier for the vehicle.
+String
+3830-3652
+
+event_type
+The type of event: ‘ARR’ for arrival, ‘DEP’ for departure, ‘PRA’ for predicted arrival, and ‘PRD’ for predicted departure. PRA and PRD events occur when the Performance system is relatively sure that a train actually made the indicated movement at the indicated station, but the system did not observe an ""actual"" event from the realtime system. In that case, we use the last available prediction for the given event as a reasonable proxy. We often lack actual ARR events at terminals because the realtime system is designed for tracking trains that passengers want to board, not necessarily trains that have already arrived at a terminal station. The instant a train arrives at a terminal station (e.g. arriving northbound at Oak Grove), the MBTA-performance system may no longer be able to track its location. In some cases, we are not able to fill in a PRA event at all, so some types of analysis are less accurate at terminals. Depending on your objectives, you may wish to use the second-to-last station as a proxy
+String
+DEP
+
+event_time
+The time of the event, in epoch time.
+Integer
+1546349755
+
+event_time_sec
+The time of the event, in seconds after midnight.
+Integer
+30955
+
+MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Events,Rapid Transit,MBTA,System Data,Vehicle Location Data,2022","This file contains the arrival and departure events for rapid transit lines for 2022.","","Massachusetts Bay Transportation Authority","CC0",,,"public","CC0-1.0","Office of Performance Management & Innovation","",""
+"e48c8cd8cf154d27b23d31777a8f39e9","MBTAHUB_ADMIN","Tue, 03 May 2022 15:57:05 GMT","Tue, 07 Jan 2025 19:39:08 GMT","MBTA Rapid Transit Travel Times 2022","CSV Collection","It includes all heavy rail and light rail rapid transit lines. These travel times are calculated from the departure time at the origin stop to the arrival time at the destination stop. Due to track circuit or other data issues, data is not guaranteed to be complete for any origin-destination pair or date. Data Dictionary: Name Description Data Type Example service_date Date for which travel times should be returned. Date 43830 route_id GTFS-compatible route for which travel times should be returned. String Orange direction_id GTFS-compatible direction for which travel times should be returned. Integer 0 from_stop_id GTFS-compatible stop representing the origin stop in a pair. String 70205 to_stop_id GTFS-compatible stop representing the destination stop in a pair. String 70154 start_time_sec Property of “Travel Times”. Expressed in ""seconds after midnight."" The time associated with the departure event of the vehicle from the origin stop of the pair. Integer 45763 end_time_sec Property of “Travel Times”. Expressed in ""seconds after midnight."" The time associated with the arrival event of the vehicle to the destination stop of the pair. Integer 46411 travel_time_sec Property of “Travel Times”. Difference between start_time_sec and end_time_sec. The actual travel time between the origin stop and the destination stop, in seconds. Integer 648 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Performance,Travel Times,Rapid Transit,MBTA,Service Data,2022","This file contains the travel times between origin and destination pairs on a single line for 2022.","","","CC0",,,"public","CC0-1.0","Massachusetts geoDOT","",""
+"b08854b18ad942e4bc471c8c20e80792","MBTAHUB_ADMIN","Tue, 16 May 2023 20:21:20 GMT","Tue, 07 Jan 2025 19:38:39 GMT","MBTA Rapid Transit Travel Times 2023","CSV Collection","It includes all heavy rail and light rail rapid transit lines. These travel times are calculated from the departure time at the origin stop to the arrival time at the destination stop. Due to track circuit or other data issues, data is not guaranteed to be complete for any origin-destination pair or date. Data Dictionary: Name Description Data Type Example service_date Date for which travel times should be returned. Date 43830 route_id GTFS-compatible route for which travel times should be returned. String Orange direction_id GTFS-compatible direction for which travel times should be returned. Integer 0 from_stop_id GTFS-compatible stop representing the origin stop in a pair. String 70205 to_stop_id GTFS-compatible stop representing the destination stop in a pair. String 70154 start_time_sec Property of “Travel Times”. Expressed in ""seconds after midnight."" The time associated with the departure event of the vehicle from the origin stop of the pair. Integer 45763 end_time_sec Property of “Travel Times”. Expressed in ""seconds after midnight."" The time associated with the arrival event of the vehicle to the destination stop of the pair. Integer 46411 travel_time_sec Property of “Travel Times”. Difference between start_time_sec and end_time_sec. The actual travel time between the origin stop and the destination stop, in seconds. Integer 648 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Rapid Transit,Travel Times,System Data,Vehicle Location Data,2023","This file contains the travel times between origin and destination pairs on a single line for 2023.","","","CC0","en-us",,"public","CC0-1.0","Massachusetts geoDOT","",""
+"b22ae539e9bc4eb287e4564f91c23bd2","MBTAHUB_ADMIN","Fri, 03 Jun 2022 13:18:18 GMT","Tue, 07 Jan 2025 19:34:41 GMT","Bus Network Redesign Draft Bus Routes May 2022","Feature Service","These routes represent the draft Bus Network Redesign proposal released on May 16th, 2022. More information about the project, an interactive map of routes, and opportunities for feedback can be found at: https://www.mbta.com/projects/bus-network-redesign/update/bus-network-redesign-proposal https://www.mbta.com/projects/bus-network-redesign/update/bus-network-redesign-proposal. A revised version of BNR, approved Nov 2022, has been released at https://mbta-massdot.opendata.arcgis.com/datasets/c3cbfd5bf9084104924939b2828360be_0 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Bus,BNRD,2022","","","","CC0","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/Bus_Network_Redesign_Draft_Bus_Routes/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","-71.84848799999999,41.58033200000005,-70.62645999999995,42.79820300000005",""
+"9a7f5634db72459ab731b6a9b274a1d4","MBTAHUB_ADMIN","Wed, 05 Apr 2023 20:30:44 GMT","Tue, 07 Jan 2025 19:31:53 GMT","MBTA Rapid Transit Events 2023","CSV Collection","It includes all heavy rail and light rail rapid transit lines. These events are used to calculate travel times, dwell times, and headways. Due to track circuit or other data issues, data is not guaranteed to be complete for any stop or date.
+
+Data Dictionary:
+
+Name
+Description
+Data Type
+Example
+
+service_date
+Date for which events should be returned.
+Date
+2023-01-01
+
+route_id
+GTFS-compatible route for which events should be returned.
+String
+Orange
+
+trip_id
+GTFS-compatible trip for which events should be returned.
+String
+461_1
+
+direction_id
+GTFS-compatible direction for which events should be returned.
+Integer
+0
+
+stop_id
+GTFS-compatible stop for which ridership should be returned.
+String
+place-wlsta
+
+stop_sequence
+GTFS-compatible order of stops on a route for which events should be returned.
+Integer
+590
+
+vehicle_id
+Property of “events”. The identifier for the vehicle performing the trip for which events are returned.
+String
+R-545A9644
+
+vehicle_label
+Property of “events”. Human-readable, publicly visible identifier for the vehicle.
+String
+3830-3652
+
+event_type
+The type of event: ‘ARR’ for arrival, ‘DEP’ for departure, ‘PRA’ for predicted arrival, and ‘PRD’ for predicted departure. PRA and PRD events occur when the Performance system is relatively sure that a train actually made the indicated movement at the indicated station, but the system did not observe an ""actual"" event from the realtime system. In that case, we use the last available prediction for the given event as a reasonable proxy. We often lack actual ARR events at terminals because the realtime system is designed for tracking trains that passengers want to board, not necessarily trains that have already arrived at a terminal station. The instant a train arrives at a terminal station (e.g. arriving northbound at Oak Grove), the MBTA-performance system may no longer be able to track its location. In some cases, we are not able to fill in a PRA event at all, so some types of analysis are less accurate at terminals. Depending on your objectives, you may wish to use the second-to-last station as a proxy
+String
+DEP
+
+event_time
+The time of the event, in epoch time.
+Integer
+1546349755
+
+event_time_sec
+The time of the event, in seconds after midnight.
+Integer
+30955
+
+MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Events,Rapid Transit,System Data,Vehicle Location Data,2023","This file contains the arrival and departure events for rapid transit lines for 2023.","","Massachusetts Bay Transportation Authority","CC0","en-us",,"public","CC0-1.0","Office of Performance Management & Innovation","",""
+"4adbec39db40498a8530496d8c63a924","MBTAHUB_ADMIN","Wed, 14 Feb 2024 21:40:56 GMT","Tue, 07 Jan 2025 19:31:23 GMT","MBTA Rapid Transit Events 2024 (old data source)","CSV Collection","IMPORTANT: This link is no longer updated. To access MBTA Rapid Transit Events 2024 data, please go to MBTA Rapid Transit Events 2024. Rapid Transit Events data is now sourced from Lightweight Application for Measuring Performance (LAMP). To learn more about LAMP, please visit LAMP website. This file contains the arrival and departure events for rapid transit lines for 2024. It includes all heavy rail and light rail rapid transit lines. These events are used to calculate travel times, dwell times, and headways. Due to track circuit or other data issues, data is not guaranteed to be complete for any stop or date.
+Data Dictionary:
+
+Name Description Data Type Example service_date Date for which events should be returned. Date 2024-01-01 route_id GTFS-compatible route for which events should be returned. String Orange trip_id GTFS-compatible trip for which events should be returned. String 461_1 direction_id GTFS-compatible direction for which events should be returned. Integer 0 stop_id GTFS-compatible stop for which ridership should be returned. String place-wlsta stop_sequence GTFS-compatible order of stops on a route for which events should be returned. Integer 590 vehicle_id Property of “events”. The identifier for the vehicle performing the trip for which events are returned. String R-545A9644 vehicle_label Property of “events”. Human-readable, publicly visible identifier for the vehicle. String 3830-3652 event_type The type of event: ‘ARR’ for arrival, ‘DEP’ for departure, ‘PRA’ for predicted arrival, and ‘PRD’ for predicted departure. PRA and PRD events occur when the Performance system is relatively sure that a train actually made the indicated movement at the indicated station, but the system did not observe an ""actual"" event from the realtime system. In that case, we use the last available prediction for the given event as a reasonable proxy. We often lack actual ARR events at terminals because the realtime system is designed for tracking trains that passengers want to board, not necessarily trains that have already arrived at a terminal station. The instant a train arrives at a terminal station (e.g. arriving northbound at Oak Grove), the MBTA-performance system may no longer be able to track its location. In some cases, we are not able to fill in a PRA event at all, so some types of analysis are less accurate at terminals. Depending on your objectives, you may wish to use the second-to-last station as a proxy String DEP event_time The time of the event, in epoch time. Integer 1546349755 event_time_sec The time of the event, in seconds after midnight. Integer 30955 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Transit,Events,2024","","","Massachusetts Bay Transportation Agency","CC0","en-us",,"public","CC0-1.0","Office of Performance Management & Innovation","",""
+"896d043f33ae4915b530df12141c772c","MBTAHUB_ADMIN","Fri, 05 Apr 2024 23:38:00 GMT","Tue, 07 Jan 2025 19:30:57 GMT","MBTA Rapid Transit Headways 2023","Feature Service","It includes all heavy rail and light rail rapid transit lines. Due to track circuit or other data issues, data is not guaranteed to be complete for any stop or date. Data Dictionary: Name Description Data Type Example service_date Date for which headways should be returned. Date 2019-12-31 route_id GTFS-compatible route for which headways should be returned. String Orange direction_id GTFS-compatible direction for which headways should be returned. Integer 0 stop_id GTFS-compatible stop for which headways should be returned. String 70154 start_time_sec Property of “Headways”. Expressed in ""seconds after midnight."" The time associated with the departure event of previous vehicle. Integer 45763 end_time_sec Property of “Headways”. Expressed in ""seconds after midnight."" The time associated with the departure event of current vehicle. Integer 46411 headway_time_sec Property of “Headways”. Difference between start_time_sec and end_time_sec. The actual travel time between the origin stop and the destination stop, in seconds. Red line trunk stops will have two headways for the same southbound train: one dependent on the destination and one independent of the destination. Integer 648 destination Property of “Headways”. Intended destination for the vehicle. String Forest Hills MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,System Data,Headway,Vehicle Location Data,Rapid Transit,2023","This file contains the headways, or time between the departure time of the current trip and the departure time of the previous trip from the same ""destination"", for rapid transit vehicles, for 2023.","","","CC0",,"https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/2023_Headways/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","",""
+"0fa93edf7f224546913b489204b074f5","MBTAHUB_ADMIN","Mon, 02 May 2022 18:25:07 GMT","Tue, 07 Jan 2025 19:29:46 GMT","MBTA Rapid Transit Headways 2022","Feature Service","It includes all heavy rail and light rail rapid transit lines. Due to track circuit or other data issues, data is not guaranteed to be complete for any stop or date. Data Dictionary: Name Description Data Type Example service_date Date for which headways should be returned. Date 2019-12-31 route_id GTFS-compatible route for which headways should be returned. String Orange direction_id GTFS-compatible direction for which headways should be returned. Integer 0 stop_id GTFS-compatible stop for which headways should be returned. String 70154 start_time_sec Property of “Headways”. Expressed in ""seconds after midnight."" The time associated with the departure event of previous vehicle. Integer 45763 end_time_sec Property of “Headways”. Expressed in ""seconds after midnight."" The time associated with the departure event of current vehicle. Integer 46411 headway_time_sec Property of “Headways”. Difference between start_time_sec and end_time_sec. The actual travel time between the origin stop and the destination stop, in seconds. Red line trunk stops will have two headways for the same southbound train: one dependent on the destination and one independent of the destination. Integer 648 destination Property of “Headways”. Intended destination for the vehicle. String Forest Hills MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","Headway,Rapid Transit,System Data,Vehicle Location Data,2022","This file contains the headways, or time between the departure time of the current trip and the departure time of the previous trip from the same ""destination"", for rapid transit vehicles, for 2022.","","","CC0",,"https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/MBTA_Rapid_Transit_Headways_2022/FeatureServer","public","CC0-1.0","Office of Performance Management & Innovation","",""
+"80a379ebaa374cfd836ca4d3880ceda4","MBTAHUB_ADMIN","Fri, 02 Aug 2024 17:56:43 GMT","Tue, 07 Jan 2025 19:27:50 GMT","Fall 2023 MBTA Rail Ridership Data by SDP Time Period, Route/Line, and Stop","Feature Service","Due to planned diversions related to track work throughout
+the Fall 2023 rating, ridership was not included on days when a diversion
+impacted a particular line. For example, there were planned diversions on the
+Orange Line from 9/18/2023 to 10/12/2023, so Orange Line ridership data during
+that period is not included.
+
+For routes with multiple branches, for example the Red Line
+with Braintree and Ashmont branches, and the Green Line with the B, C, D, and E
+branches, ridership estimates are combined through the trunk.
+
+Name
+
+Description
+
+Data Type
+
+Example
+
+mode
+
+Mode of
+transportation for which ridership should be returned.
+
+String
+
+Heavy Rail
+
+season
+
+Season and
+year for which ridership should be returned.
+
+String
+
+Fall 2023
+
+route_id
+
+Route for
+which ridership should be returned
+
+String
+
+Red
+
+route_name
+
+Description
+of route.
+
+String
+
+Red Line
+
+direction_id
+
+Direction for
+which ridership should be returned: NB, SB, EB, or WB.
+
+String
+
+EB
+
+day_type_id
+
+Shorthand for
+day identifier.
+
+String
+
+day_type_01
+
+day_type_name
+
+Text
+description of the ID. Weekday, Saturday, or Sunday; holidays are excluded
+from the data.
+
+String
+
+Weekday
+
+time_period_id
+
+Shorthand for
+time period identifier, per our Service Delivery Policy.
+
+String
+
+time_period_03
+
+time_period_name
+
+Aggregated
+periods of varying length to represent different levels of service provided.
+
+String
+
+AM_PEAK
+
+stop_name
+
+GTFS-compatible
+stop name for which ridership should be returned.
+
+String
+
+Wollaston
+
+parent-station
+
+GTFS-compatible
+stop for which ridership should be returned.
+
+String
+
+place-wlsta
+
+total_ons
+
+The count of
+passengers boarding vehicles, summed by the aggregated fields.
+
+Double
+
+1491
+
+total_offs
+
+The count of passengers
+alighting vehicles, summed by the aggregated fields.
+
+Double
+
+7990
+
+number_service_days
+
+Number of
+non-holiday service days in the season based on day type.
+
+Integer
+
+19
+
+average_ons
+
+Represents
+the ons on a typical service day within the aggregated fields. Calculated by
+total_ons/number_service_days.
+
+Double
+
+435.6
+
+average_offs
+
+Represents
+the offs on a typical service day within the aggregated fields. Calculated by
+total_offs/number_service_days.
+
+Double
+
+65.4
+
+average_flow
+
+The total
+number of passengers traveling through the rail system between stations
+within the aggregated time period, averaged to represent the typical weekday,
+Saturday, or Sunday.
+
+Double
+
+21
+
+MassDOT/MBTA shall not be held liable for any errors in this
+data. This includes errors of omission, commission, errors concerning the
+content of the data, and relative and positional accuracy of the data. This
+data cannot be construed to be a legal document. Primary sources from which
+this data was compiled must be consulted for verification of information
+contained in this data.","Ridership,SDP,Rapid Transit,2023","This file contains detailed ridership data for heavy rail and light rail during the Fall 2023 rating (August 27-December 16). It contains the average ridership for a typical day during the rating by route/line, direction, stop, day type, and SDP (Service Delivery Policy) time period.","","","","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/Fall_2023_MBTA_Rail_Ridership_Data_by_SDP_Time_Period_Route_Line_and_Stop/FeatureServer","public",,"Massachusetts geoDOT","",""
+"1e1c98ac062c442ca30ae5fa8d371105","MBTAHUB_ADMIN","Tue, 27 Aug 2024 15:53:01 GMT","Tue, 07 Jan 2025 19:26:13 GMT","Bus Network Redesign – Network Map Summer 2024","Feature Service","For more information about the project, including an
+interactive map of routes, please visit https://www.mbta.com/projects/bus-network-redesign/new-bus-network-map.
+
+Please note that this map is a board-approved draft, and
+some areas may still be subject to change as we refine each route alignment for
+implementation. If you have a project related need or would like more details,
+please contact us at BetterBusProject@mbta.com. MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","BNRD,Bus,MBTA,2024","These routes represent the board-approved Bus Network Redesign map released on November 8th, 2022. This Summer 2024 revision incorporates the latest updates and improvements based on ongoing analysis. ","","","","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/Bus_Network_Redesign_%E2%80%93_Network_Map_Summer_2024/FeatureServer","public",,"Massachusetts geoDOT","-71.29292,42.106457,-70.84459,42.5875",""
+"96c77138c3144906bce93d0257531b6a","MBTAHUB_ADMIN","Mon, 26 Feb 2024 21:31:35 GMT","Tue, 07 Jan 2025 19:04:26 GMT","MBTA Bus Arrival Departure Times 2024","CSV Collection","This file contains the arrival and departure events for buses up to the most recent completed month of 2024. Due to data collection issues, data is not guaranteed to be complete for any stop or date. Data Dictionary:
+
+Name Description Data Type Example service_date Date on which the trip took place. Service dates run from around 2:00AM - 1:59:59AM Date 2019-12-31 route_id Route Id String 01 direction_id Identifies whether the trip is traveling inbound or outbound String Inbound half_trip_id Identification for the one way trip Integer 40836717 stop_id GTFS-compatible stop Integer 75 time_point_id The code for the timepoint String mit time_point_order The order of this timepoint in the trip Integer 4 point_type Identifies whether the stop is the starting point, midpoint, or endpoint for the trip String Midpoint standard_type Identifies whether the trip should be evaluated on the scheudle standard or headway standard. String Headway scheduled The time the trip was scheduled to depart the stop. The scheduled time should not be used to evaluated reliability if this trip is evaluated on the headway standard. Only the headway and run time should be used per the Service Delivery Policy. Time 12:30 AM actual The time the trip actually departed the timepoint. Time 12:29 AM scheduled_headway The scheduled time between the trip and the previous trip at the stop, in seconds. NULL if this trip is evaluated on the schedule standard. Integer 1200 headway The actual time between the trip and the previous trip at the stop, in seconds. NULL if this trip is evaluated on the schedule standard or if this is the last stop on the trip (endpoint). Endpoints are evaluated by whether the trip runtime is within 120% of the scheduled run time. Integer 1163 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Bus,System Data,Headway,Vehicle Location Data,2024","","","Massachusetts Bay Transportation Authority","CC0","en-us",,"public","CC0-1.0","Massachusetts geoDOT","-71.44352499999879,42.18607399999928,-70.7109569999988,42.45707199999927",""
+"f960d5089e164fb8b6c6936c70719d72","MBTAHUB_ADMIN","Wed, 04 Dec 2024 21:53:47 GMT","Tue, 07 Jan 2025 18:16:23 GMT","MBTA Service Alerts 2024","CSV Collection","Data Dictionary: Name Description Data Type Example alert_id Unique identifier for this Alert. Subsequent updates to it will have the same ID. integer 293631 cause Cause of this alert. string construction cause_detail Description of the cause of the alert that allows for agency-specific language; more specific than the Cause. string traffic effect The effect of this problem on the affected entity. string detour effect_detail Description of the effect of the alert that allows for agency-specific language; more specific than the Effect. string parking_issue severity_level The severity of the alert. string severe severity How severe the alert is from least (0) to most (10) severe. integer 5 header Header for the alert. string description Description for the alert string alert_lifecycle Whether the alert is in effect now, will be in the future, or has been for a while. string ongoing duration_certainty Whether the alert has a known, unknown, or estimated end. string estimated service_effect Brief summary of effect and affected service. string Route 131 delay timeframe_text Human readable summary of when service will be disrupted. string Wednesday through Friday recurrence_text Human readable summary of how active_period values are repeating (ex: “daily”, “weekdays”). string 2 days a week created_dt Creation time, in EST Datetime. date 2019-02-0110:02:13 last_modified_dt Last meaningful modification time, in EST Datetime. date 2020-01-2806:52:30 closed_dt Closed time, in EST Datetime date 2023-09-1807:20:24 active_period_start_date Start date when the alert should be shown to the user. date 2021-02-26 active_period_start_dt Start time when the alert should be shown to the user. date 2021-02-2610:00:00 active_period_end_dt End time when the alert should be shown to the user. date 2023-07-1309:14:56 last_push_notification_dt Time when message about alert has been sent to user date 2021-02-2611:23:00 route_id Route id of entities whose users we should notify of this alert. string CR-Haverhill route_type Route type of entities whose users we should notify of this alert. integer 2 direction_id Direction id for the entities whose users we should notify of this alert. integer 1 stop_id Stop id for the entity whose users we should notify of this alert. string 2827 facility_id Facility of the entity whose users we should notify of this alert. string subplat-WML-0340 activities Activity of the entity whose users we should notify of this alert. string Board|Exit MBTA Alerts data is sourced from Lightweight Application for Measuring Performance (LAMP). To learn more about LAMP, please visit LAMP website. MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Performance,Alerts,2024","This file contains the MBTA GTFS Realtime alerts for 2024.","","","","en-us",,"public",,"Office of Performance Management & Innovation","0,0,0,0",""
+"c3cbfd5bf9084104924939b2828360be","MBTAHUB_ADMIN","Thu, 15 Feb 2024 20:16:11 GMT","Tue, 27 Aug 2024 16:18:14 GMT","Bus Network Redesign Draft Bus Routes November 2022","Feature Service","For more information about the project, including an interactive map of routes, please visit https://www.mbta.com/projects/bus-network-redesign/new-bus-network-map. Please note that this map is a board-approved draft, and some areas may still be subject to change as we refine each route alignment for implementation. If you have a project related need or would like more details, please contact us at BetterBusProject@mbta.com. The Summer 2024 revision, which incorporates the latest updates and improvements based on ongoing analysis, can be found at https://mbta-massdot.opendata.arcgis.com/datasets/1e1c98ac062c442ca30ae5fa8d371105_0/explore. MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Bus,BNRD","These routes represent the board-approved Bus Network Redesign map released on November 8th, 2022. ","","","","en-us","https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/Bus_Network_Redesign_Draft_Bus_Routes_Fall_2022/FeatureServer","public",,"Office of Performance Management & Innovation","-71.848488,41.580332,-70.62646,42.798203",""
+"fc80c306809e452d94b110b0bbc6ac16","MBTAHUB_ADMIN","Fri, 29 May 2020 17:53:01 GMT","Thu, 16 May 2024 19:27:54 GMT","MBTA Performance Guide","PDF","Our guide to performance definitions, data collection methods, and data sets. Updated June 2020. Included in this guide: Key Words: Performance Data Customer Satisfaction Reliability Schedule Adherence Passenger Wait Time Time Period Peak Hour Service Day Season How We Calculate Reliability: Heavy and Light Rail Bus Commuter Rail The RIDE Ferry How We Calculate Satisfaction Suggested Use Cases MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Performance,Guide","Our guide to performance definitions, data collection methods, and data sets. Updated June 2020.","","Massachusetts Bay Transportation Authority","CC0","en-us",,"public","CC0-1.0","Office of Performance Management & Innovation","",""
+"73737614c2014a2fbb5ad7a986679b78","MBTAHUB_ADMIN","Thu, 18 Jun 2020 17:44:50 GMT","Thu, 16 May 2024 19:27:22 GMT","MBTA System Data Guide","PDF","Our guide to system data definitions, data collection methods, and data sets. Updated June 2020. Included in this guide: Key Words: System Data Vehicle Location Data General Transit Specific Feed (GTFS) Service Area Event (rail) Travel Time (rail) Headway (rail) Headway (bus) Alerts Stop Distance Direction Stop Sequence Peak Hour Time Period Service Day Season How We Collect System Data: Using Vehicle Location Data for: Using GTFS Vehicle Location Data Use Cases Reference Table Use Cases MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Guide,System Data","Our guide to system data definitions, data collection methods, and data sets. Updated June 2020.","","Massachusetts Bay Transportation Authority","CC0","en-us",,"public","CC0-1.0","Office of Performance Management & Innovation","",""
+"c4625d2f71bc4b638ade0e2015851c00","MBTAHUB_ADMIN","Wed, 06 May 2020 14:59:08 GMT","Thu, 16 May 2024 19:26:52 GMT","MBTA Ridership Guide","PDF","Our guide to ridership definitions, data collection methods, and data sets. Updated June 2020. Included in this guide: How We Calculate Ridership: Automatic Passenger Counters (APC) Automated Fare Collection (AFC) Manual counts Key Words: Flow Load Ridership Station Entries Peak Hour Service Day Time Period Season Suggested Use Cases Average Weekday Gated Station Entries FY19 MassDOT/MBTA shall not be held liable for any errors in this data. This includes errors of omission, commission, errors concerning the content of the data, and relative and positional accuracy of the data. This data cannot be construed to be a legal document. Primary sources from which this data was compiled must be consulted for verification of information contained in this data.","MBTA,Ridership,Guide","Our guide to ridership definitions, data collection methods, and data sets. Updated June 2020.","","Massachusetts Bay Transportation Authority","CC0","en-us",,"public","CC0-1.0","Office of Performance Management & Innovation","0,0,0,0",""
