@@ -59,7 +59,7 @@ def build_policy_flow(nodes_fp: str, gse_fp: str, travel_times_fp: str) -> pd.Da
 
         rows = []
         node_id = 0
-        for _, row in nodes["STATION", "LINE"]].iterrows():
+        for _, row in nodes["STATION", "LINE"].iterrows():
             for line in row["LINE"].split("/"):
                 rows.append(
                     {
