@@ -194,4 +194,28 @@ Does NOT require modifying `mbta_handling.py`. Surface station data is a standal
 
 ---
 
-*Last updated: March 2026*
+## Data Update (March 25, 2026)
+
+### Ridership Data Acquired
+
+Downloaded **Fall 2024 MBTA Rail Ridership by SDP Time Period, Route/Line, and Stop** from the MBTA Open Data Portal. This provides actual station-level boardings (`total_ons`/`total_offs`) for all 70 Green Line stops including surface stations.
+
+- **File:** `data/input_data/Fall_2024_MBTA_Rail_Ridership_by_SDP_Time_Period,_Route_Line,_and_Stop.csv`
+- **Season:** Fall 2024 (Aug 25 – Dec 14, 75 weekday service days)
+- **Coverage:** All Green Line stops (both gated underground and surface)
+- **Key fields:** `stop_name`, `total_ons`, `total_offs`, `average_ons`, `day_type_name`, `time_period_name`
+
+### What Changed in the Analysis
+
+1. **Station-level boardings now from data**, not fabricated estimates. Real numbers are much lower than the backsolve suggested (~5.5M total surface boardings vs. 18.75M backsolve). The backsolve overestimated because it attributed all $4.5M in lost revenue to surface stops, but underground Green Line stops also use honor-system enforcement.
+2. **Branch mapping** is hardcoded (MBTA system geography — factual, not an estimate). The route_id in the data is just "Green" with no branch split.
+3. **gates_needed** is still an assumption (tiered by daily boardings: ≥800→4, ≥400→3, else→2).
+4. **short_haul_exposure** is still a literature-based assumption (Barabino et al. 2015), interpolated by stop position within branch (inner=0.90, outer=0.60).
+
+### Open Questions Resolved
+
+1. ✅ Branch-level disaggregation is now possible from data — station-level boardings mapped to B/C/D/E branches.
+
+---
+
+*Last updated: March 25, 2026*
