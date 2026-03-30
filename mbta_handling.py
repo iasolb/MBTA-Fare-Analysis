@@ -28,7 +28,9 @@ def time_bucket(t, dt: Optional[bool] = False) -> str:
         return "Late Night"
 
 
-def build_policy_flow(nodes_fp: str, gse_fp: str, travel_times_fp: str) -> pd.DataFrame:
+def build_policy_flow(
+    nodes_fp: str, gse_fp: str, travel_times_hr_fp: str, travel_time_lr_fp: str
+) -> pd.DataFrame:
     """
     Builds a merged DataFrame of avg travel times and source/destination gate activity
     by station-line pair and time bucket, for policy targeting.
@@ -37,8 +39,8 @@ def build_policy_flow(nodes_fp: str, gse_fp: str, travel_times_fp: str) -> pd.Da
         # --- Load data ---
         nodes = gpd.read_file(nodes_fp)
         gse = pd.read_csv(gse_fp)
-        travel_times = pd.read_csv(travel_times_fp)
-
+        travel_times_hr = pd.read_csv(travel_times_hr_fp, low_memory=False)
+        travel_times_lr = pd.read_csv(travel_time_lr_fp, low_memory=False)
         # --- Build station table ---
         gse["line"] = (
             gse["route_or_line"]
@@ -59,7 +61,7 @@ def build_policy_flow(nodes_fp: str, gse_fp: str, travel_times_fp: str) -> pd.Da
 
         rows = []
         node_id = 0
-        for _, row in nodes["STATION", "LINE"].iterrows():
+        for _, row in nodes[["STATION", "LINE"]].iterrows():
             for line in row["LINE"].split("/"):
                 rows.append(
                     {
@@ -88,6 +90,7 @@ def build_policy_flow(nodes_fp: str, gse_fp: str, travel_times_fp: str) -> pd.Da
             .rename(columns={"gated_entries": "avg_gated_entries"})
         )
 
+        travel_times = pd.concat([travel_times_hr, travel_times_lr])
         # --- Travel time prep ---
         trips = travel_times[
             [
@@ -106,7 +109,7 @@ def build_policy_flow(nodes_fp: str, gse_fp: str, travel_times_fp: str) -> pd.Da
             },
             inplace=True,
         )
-        trips["line"] = trips["line"].str.upper()
+        trips["line"] = trips["line"].str.upper().str.split("-").str[0]
         trips["station_line_source"] = trips["source"] + ", " + trips["line"]
         trips["station_line_destination"] = trips["destination"] + ", " + trips["line"]
         trips.drop(columns=["source", "destination"], inplace=True)
